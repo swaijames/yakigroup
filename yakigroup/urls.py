@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from websiteapi import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('website.urls')),
-    path('api', include('websiteapi.urls'))
+    path('', include('websiteapi.urls')),
+    path('profile/', views.ProfileView.as_view()),
 ]

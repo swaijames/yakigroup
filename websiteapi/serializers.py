@@ -1,33 +1,53 @@
+from abc import ABC
+
 from rest_framework import serializers
-from website.models import *
-from tourmanager.models import *
+from .models import *
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 
 
-class WebsiteContectsSerialiser(serializers.HyperlinkedModelSerializer):
+class PackageSerialiser(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = WebsiteContects
+        model = Package
         fields = "__all__"
 
 
-class TourRegionsSerialiser(serializers.ModelSerializer):
+class Package_Detail_Serialiser(serializers.ModelSerializer):
     class Meta:
-        model = Regions
+        model = Package_Details
         fields = "__all__"
 
 
-class TourDestinationsSerialiser(serializers.ModelSerializer):
+class DestinationSerialiser(serializers.ModelSerializer):
     class Meta:
-        model = Destinations
+        model = Destination
         fields = "__all__"
 
 
-class TourSerialiser(serializers.ModelSerializer):
+class Destination_Detail_Serialiser(serializers.ModelSerializer):
     class Meta:
-        model = Tours
+        model = Destination_Detail
         fields = "__all__"
 
 
-class TourDataSerializer(serializers.ModelSerializer):
+class GallerySerializer(serializers.ModelSerializer):
     class Meta:
-        model = TourData
+        model = Gallery
         fields = "__all__"
+
+
+class HeroSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Hero
+        fields = "__all__"
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+        ]

@@ -1,8 +1,8 @@
+from django.contrib.auth import login
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
-from website.models import *
 from .serializers import *
 from rest_framework import generics, mixins
 from rest_framework import viewsets
@@ -11,9 +11,31 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 
 
-# Create your views here.
+# from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+# from rest_framework.permissions import IsAuthenticated
+# from rest_framework.response import Response
+# from rest_framework.views import APIView
 
-class WebsiteContectsView(
+
+# # Create your views here.
+# class AuthView(APIView):
+#     authentication_classes = [SessionAuthentication, BasicAuthentication]
+#     permission_classes = [IsAuthenticated]
+#
+#     def get(self, request, format=None):
+#         content = {
+#             'user': str(request.user),  # `django.contrib.auth.User` instance.
+#             'auth': str(request.auth),  # None
+#         }
+#         return Response(content)
+class ProfileView(generics.RetrieveAPIView):
+    serializer_class = UserSerializer
+
+    def get_object(self):
+        return self.request.user
+
+
+class PackageView(
     viewsets.GenericViewSet,
     mixins.ListModelMixin,
     mixins.CreateModelMixin,
@@ -21,11 +43,11 @@ class WebsiteContectsView(
     mixins.DestroyModelMixin,
     mixins.RetrieveModelMixin
 ):
-    queryset = WebsiteContects.objects.all()
-    serializer_class = WebsiteContectsSerialiser
+    queryset = Package.objects.all()
+    serializer_class = PackageSerialiser
 
 
-class TourRegionsView(
+class Package_Detail_View(
     viewsets.GenericViewSet,
     mixins.ListModelMixin,
     mixins.CreateModelMixin,
@@ -34,11 +56,11 @@ class TourRegionsView(
     mixins.RetrieveModelMixin
 
 ):
-    queryset = Regions.objects.all()
-    serializer_class = TourRegionsSerialiser
+    queryset = Package_Details.objects.all()
+    serializer_class = Package_Detail_Serialiser
 
 
-class TourDestnationView(
+class DestnationView(
     viewsets.GenericViewSet,
     mixins.ListModelMixin,
     mixins.CreateModelMixin,
@@ -46,11 +68,11 @@ class TourDestnationView(
     mixins.DestroyModelMixin,
     mixins.RetrieveModelMixin
 ):
-    queryset = Destinations.objects.all()
-    serializer_class = TourDestinationsSerialiser
+    queryset = Destination.objects.all()
+    serializer_class = DestinationSerialiser
 
 
-class TourView(
+class Destination_Detail_View(
     viewsets.GenericViewSet,
     mixins.ListModelMixin,
     mixins.CreateModelMixin,
@@ -58,11 +80,11 @@ class TourView(
     mixins.DestroyModelMixin,
     mixins.RetrieveModelMixin
 ):
-    queryset = Tours.objects.all()
-    serializer_class = TourSerialiser
+    queryset = Destination_Detail.objects.all()
+    serializer_class = Destination_Detail_Serialiser
 
 
-class TourDataView(
+class GalleryView(
     viewsets.GenericViewSet,
     mixins.ListModelMixin,
     mixins.CreateModelMixin,
@@ -70,5 +92,17 @@ class TourDataView(
     mixins.DestroyModelMixin,
     mixins.RetrieveModelMixin
 ):
-    queryset = TourData.objects.all()
-    serializer_class = TourDataSerializer
+    queryset = Gallery.objects.all()
+    serializer_class = GallerySerializer
+
+
+class HeroView(
+    viewsets.GenericViewSet,
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    mixins.RetrieveModelMixin
+):
+    queryset = Hero.objects.all()
+    serializer_class = HeroSerializer
