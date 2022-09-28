@@ -46,6 +46,10 @@ class Package_Details(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = "Package_Detail"
+        verbose_name_plural = "Packages_Details"
+
     def __str__(self):
         return self.package
 
@@ -55,6 +59,10 @@ class Destination(models.Model):
     image = models.FileField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Destination"
+        verbose_name_plural = "Destinations"
 
     def __str__(self):
         return self.title
@@ -72,6 +80,10 @@ class Destination_Detail(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = "Destination_Detail"
+        verbose_name_plural = "Destinations_Details"
+
     def __str__(self):
         return self.destination
 
@@ -81,6 +93,10 @@ class Gallery(models.Model):
     video = models.FileField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Gallery"
+        verbose_name_plural = "Galleries"
 
     def __str__(self):
         return self.created_at
@@ -98,6 +114,10 @@ class Hero(models.Model):
     description3 = models.TextField(blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Hero"
+        verbose_name_plural = "Heroes"
 
     def __str__(self):
         return self.title1, self.title2, self.title3

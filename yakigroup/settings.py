@@ -78,37 +78,38 @@ WSGI_APPLICATION = 'yakigroup.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 if os.environ.get('DEPLOYMENT_ENVIRONMENT') != "prod":
-    #     DATABASES = {
-    #         'default': {
-    #             'ENGINE': 'django.db.backends.sqlite3',
-    #             'NAME': 'mydatabase',
-    #         }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': 'mydatabase',
     #     }
+    # }
 
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': '',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': '',
+            'NAME': 'yakigroup',
+            'USER': 'postgres',
+            'PASSWORD': 'mypass',
+            'HOST': 'localhost',
+            'PORT': '5432',
+
         }
 
     }
-
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': config('SQL_ENGINE'),
-            'NAME': config('SQL_DATABASE'),
-            'USER': config('SQL_USER'),
-            'PASSWORD': config('SQL_PASSWORD'),
-            'HOST': config('SQL_HOST'),
-            'PORT': config('SQL_PORT'),
-        }
-
-    }
+#
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': config('SQL_ENGINE'),
+#             'NAME': config('SQL_DATABASE'),
+#             'USER': config('SQL_USER'),
+#             'PASSWORD': config('SQL_PASSWORD'),
+#             'HOST': config('SQL_HOST'),
+#             'PORT': config('SQL_PORT'),
+#         }
+#
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -137,12 +138,18 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = True
+
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
