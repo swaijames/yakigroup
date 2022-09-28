@@ -98,18 +98,18 @@ if os.environ.get('DEPLOYMENT_ENVIRONMENT') != "prod":
 
     }
 #
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': config('SQL_ENGINE'),
-#             'NAME': config('SQL_DATABASE'),
-#             'USER': config('SQL_USER'),
-#             'PASSWORD': config('SQL_PASSWORD'),
-#             'HOST': config('SQL_HOST'),
-#             'PORT': config('SQL_PORT'),
-#         }
-#
-#     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': config('SQL_ENGINE'),
+            'NAME': config('SQL_DATABASE'),
+            'USER': config('SQL_USER'),
+            'PASSWORD': config('SQL_PASSWORD'),
+            'HOST': config('SQL_HOST'),
+            'PORT': config('SQL_PORT'),
+        }
+
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
