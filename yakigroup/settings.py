@@ -89,10 +89,10 @@ if os.environ.get('DEPLOYMENT_ENVIRONMENT') != "prod":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'yakigroup',
-            'USER': 'postgres',
-            'PASSWORD': 'mypass',
-            'HOST': 'localhost',
+            'NAME': 'rojadb',
+            'USER': 'oceanwareltd',
+            'PASSWORD': 'QJBU2bD6gs7\+R',
+            'HOST': 'oceanwareltd.co.tz',
             'PORT': '5432',
 
         }
