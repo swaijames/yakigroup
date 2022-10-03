@@ -42,3 +42,11 @@ in ```installed_app```
 
   ```
   then run ```python manage.py collectstatic``` 
+  
+  If you want to run django migrations or any other pre-scripts on startup, use as below;
+```bash
+ python manage.py makemigrations
+ python manage.py migrate
+ python manage.py runserver
+```
+ 
