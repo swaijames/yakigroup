@@ -178,7 +178,7 @@
                                         </a>
                                     </li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item">
-                                        <a href="html/tour/settings.html" class="nk-menu-link">
+                                        <a href="{% url 'logout' %}" class="nk-menu-link">
                                             <span class="nk-menu-icon"><em
                                                     class="icon ni ni-signout"></em></span>
                                             <span class="nk-menu-text">Sign Out</span>
@@ -202,20 +202,11 @@
                                             class="icon ni ni-menu"></em></a>
                                 </div>
                                 <div class="nk-header-brand d-xl-none">
-<<<<<<< HEAD
                                     <a href="{% url 'index' %}" class="logo-link nk-sidebar-logo">
                                         <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
                                              srcset="{% static 'admin_dash/images/logo2x.png 2x' %}" alt="logo">
                                         <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
                                              srcset="{% static 'admin_dash/images/logo-dark2x.png 2x' %}" alt="logo-dark">
-=======
-                                    <a href="{% url 'index' %}" class="logo-link">
-                                        <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
-                                             srcset="{% static 'admin_dash/images/logo2x.png' %} 2x"
-                                             alt="logo">
-                                        <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
-                                             srcset="{% static 'admin_dash/images/logo-dark2x.png' %} 2x" alt="logo-dark">
->>>>>>> b49f882a000fb026f47f6d24fc4fda85edb536c3
                                     </a>
                                 </div><!-- .nk-header-brand -->
                                 <div class="nk-header-news d-none d-xl-block">
@@ -258,9 +249,6 @@
                                                         </li>
                                                         <li><a href="html/tour/settings-activity-log.html"><em
                                                                 class="icon ni ni-activity-alt"></em><span>Login Activity</span></a>
-                                                        </li>
-                                                        <li><a class="dark-switch" href="#"><em
-                                                                class="icon ni ni-moon"></em><span>Dark Mode</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -134,13 +134,6 @@ def booking_edit(request):
 def customer(request):
     return render(request, 'Tour/customers.html')
 
-<<<<<<< HEAD
-def login(request):
-    return render(request, 'auths/login.html')
-
-def reset(request):
-    return render(request, 'auths/reset.html')
-=======
 
 def admin_login(request):
     try:
@@ -174,4 +167,3 @@ def logout_view(request):
 
 def reset(request):
     return render(request, 'auths/reset.html')
->>>>>>> b49f882a000fb026f47f6d24fc4fda85edb536c3
