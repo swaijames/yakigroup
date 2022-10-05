@@ -136,7 +136,7 @@ def customer(request):
 def admin_login(request):
     try:
         if request.user.is_authenticated:
-            return redirect("/dashboard/")
+            return redirect("/yaki_dashboard")
         if request.method == 'POST':
             username = request.POST.get("username")
             password = request.POST.get("password")
@@ -149,10 +149,14 @@ def admin_login(request):
 
             if user_obj and user_obj.is_superuser:
                 login(request, user_obj)
-                return redirect('/dashboard/')
+                return redirect('/yaki_dashboard')
 
             messages.info(request, ' Invalid password')
             return redirect('/')
         return render(request, 'auths/login.html')
     except Exception as e:
         print(e)
+
+
+def reset(request):
+    return render(request, 'auths/reset.html')
