@@ -126,3 +126,9 @@ def booking_edit(request):
 
 def customer(request):
     return render(request, 'Tour/customers.html')
+
+def login(request):
+    return render(request, 'auths/login.html')
+
+def reset(request):
+    return render(request, 'auths/reset.html')

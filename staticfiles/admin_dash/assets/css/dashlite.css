@@ -30030,11 +30030,11 @@ li {
 }
 
 .dot-primary {
-  background: #15803d;
+  background: orange;
 }
 
 .dot-secondary {
-  background: #15803d;
+  background: orange;
 }
 
 .dot-success {
@@ -34275,7 +34275,7 @@ button.close {
   display: table-row;
 }
 .nk-tb-item:not(.nk-tb-head):hover, .nk-tb-item:not(.nk-tb-head).seleted {
-  background: #f8f9fc;
+  background: #15803d21;
   box-shadow: 0 0 10px -4px rgba(54, 74, 99, 0.2);
 }
 .nk-tb-col {
@@ -34336,7 +34336,8 @@ button.close {
 }
 .nk-tb-item:hover .nk-tb-action-hidden {
   opacity: 1;
-  background: #f8f9fc;
+  background: #15803d21;
+  border-radius: 50%;
 }
 .nk-tb-list .nk-tb-head .btn-trigger .icon {
   font-size: 1.5em;
@@ -34358,7 +34359,8 @@ button.close {
   border-radius: 0 4px 4px 0;
 }
 .nk-tb-list.is-separate .nk-tb-item:hover .nk-tb-action-hidden {
-  background: #dcfce7;
+  background: #15803d21;
+  border-radius: 50%;
 }
 .nk-tb-list.is-separate .nk-tb-head .nk-tb-col {
   padding-top: 0.75rem;
@@ -40139,7 +40141,7 @@ body.dark-mode.nk-body.ui-softy, body.dark-mode.nk-body.ui-shady {
 }
 .dark-mode .nk-tb-item:hover .nk-tb-action-hidden, .dark-mode .bq-note-text,
 .dark-mode .nk-tb-item:not(.nk-tb-head):hover, .dark-mode .nk-tb-item:not(.nk-tb-head).seleted {
-  background: #11171f;
+  background: #15803d21;
 }
 .dark-mode .nk-apps-sidebar .dropdown-menu .lead-text, .dark-mode .list-step li.list-step-current,
 .dark-mode .nk-tb-list .tb-lead, .dark-mode .nk-tb-list .tb-amount, .dark-mode .nk-support-content .title, .dark-mode .nk-sale-data .amount {
@@ -40591,7 +40593,7 @@ body.dark-mode.nk-body.ui-softy, body.dark-mode.nk-body.ui-shady {
 }
 .dark-mode .nk-tb-list.is-separate .nk-tb-item > .nk-tb-col,
 .dark-mode .nk-tb-list.is-separate .nk-tb-item:hover .nk-tb-action-hidden {
-  background-color: #141c26;
+  background-color: #15803d21;
 }
 .dark-mode .nk-tb-list .tb-product .title {
   color: #dcfce7;

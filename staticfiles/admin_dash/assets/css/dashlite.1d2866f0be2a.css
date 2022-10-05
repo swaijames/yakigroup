@@ -26,43 +26,43 @@
 /** 01. FONTS */
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Light.eot");
-  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/Roboto-Light.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light.ttf") format("truetype");
+  src: url("../fonts/Roboto-Light.35d85034cc6e.eot");
+  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/Roboto-Light.35d85034cc6e.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light.ed4b08d2702f.woff2") format("woff2"), url("../fonts/Roboto-Light.10ad0f861c0c.woff") format("woff"), url("../fonts/Roboto-Light.2382fa8a8afc.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.eot");
-  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/Roboto-Regular.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("../fonts/Roboto-Regular.b9077621ce78.eot");
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/Roboto-Regular.b9077621ce78.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.9feb0110b6df.woff2") format("woff2"), url("../fonts/Roboto-Regular.94dac78eee40.woff") format("woff"), url("../fonts/Roboto-Regular.4312f1fbdcf4.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Medium.eot");
-  src: local("Roboto Medium"), local("Roboto-Medium"), url("../fonts/Roboto-Medium.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium.ttf") format("truetype");
+  src: url("../fonts/Roboto-Medium.02aa6e7b39da.eot");
+  src: local("Roboto Medium"), local("Roboto-Medium"), url("../fonts/Roboto-Medium.02aa6e7b39da.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.50d01d3e6c99.woff2") format("woff2"), url("../fonts/Roboto-Medium.9a3bf7acae14.woff") format("woff"), url("../fonts/Roboto-Medium.b2bcaa52d04b.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold.eot");
-  src: local("Roboto Bold"), local("Roboto-Medium"), url("../fonts/Roboto-Bold.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype");
+  src: url("../fonts/Roboto-Bold.4a1d8c27dac2.eot");
+  src: local("Roboto Bold"), local("Roboto-Medium"), url("../fonts/Roboto-Bold.4a1d8c27dac2.eot#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.f3a02e2578be.woff2") format("woff2"), url("../fonts/Roboto-Bold.08cb8f797157.woff") format("woff"), url("../fonts/Roboto-Bold.16d7bb99c6f8.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Regular.eot");
-  src: local("Nunito Regular"), local("Nunito-Regular"), url("../fonts/Nunito-Regular.eot#iefix") format("embedded-opentype"), url("../fonts/Nunito-Regular.woff2") format("woff2"), url("../fonts/Nunito-Regular.woff") format("woff"), url("../fonts/Nunito-Regular.ttf") format("truetype");
+  src: url("../fonts/Nunito-Regular.01c2c5d0f49a.eot");
+  src: local("Nunito Regular"), local("Nunito-Regular"), url("../fonts/Nunito-Regular.01c2c5d0f49a.eot#iefix") format("embedded-opentype"), url("../fonts/Nunito-Regular.28cb30aa8e6f.woff2") format("woff2"), url("../fonts/Nunito-Regular.df769a3b6067.woff") format("woff"), url("../fonts/Nunito-Regular.21e7227efb99.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Bold.eot");
-  src: local("Nunito Bold"), local("Nunito-Bold"), url("../fonts/Nunito-Bold.eot#iefix") format("embedded-opentype"), url("../fonts/Nunito-Bold.woff2") format("woff2"), url("../fonts/Nunito-Bold.woff") format("woff"), url("../fonts/Nunito-Bold.ttf") format("truetype");
+  src: url("../fonts/Nunito-Bold.7e0d1d25c811.eot");
+  src: local("Nunito Bold"), local("Nunito-Bold"), url("../fonts/Nunito-Bold.7e0d1d25c811.eot#iefix") format("embedded-opentype"), url("../fonts/Nunito-Bold.28a6dc5d5990.woff2") format("woff2"), url("../fonts/Nunito-Bold.ef78408fe264.woff") format("woff"), url("../fonts/Nunito-Bold.51badceb0a8e.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -16049,8 +16049,8 @@ div.dataTables_wrapper div.dataTables_length .input-group-lg > select,
 
 @font-face {
   font-family: "Nioicon";
-  src: url("../fonts/Nioicon.eot");
-  src: url("../fonts/Nioicon.eot#iefix") format("embedded-opentype"), url("../fonts/Nioicon.ttf") format("truetype"), url("../fonts/Nioicon.woff") format("woff"), url("../fonts/Nioicon.svg#Nioicon") format("svg");
+  src: url("../fonts/Nioicon.148995afbb49.eot");
+  src: url("../fonts/Nioicon.148995afbb49.eot#iefix") format("embedded-opentype"), url("../fonts/Nioicon.f7803d3faaec.ttf") format("truetype"), url("../fonts/Nioicon.d5ab9d403249.woff") format("woff"), url("../fonts/Nioicon.329448cc5396.svg#Nioicon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30030,11 +30030,11 @@ li {
 }
 
 .dot-primary {
-  background: orange;
+  background: #15803d;
 }
 
 .dot-secondary {
-  background: orange;
+  background: #15803d;
 }
 
 .dot-success {
