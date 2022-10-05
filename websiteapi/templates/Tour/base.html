@@ -1,3 +1,4 @@
+
 {% load static %}
 {% block html %}
     <!DOCTYPE html>
@@ -38,9 +39,9 @@
                         <div class="nk-sidebar-brand">
                             <a href="{% url 'index' %}" class="logo-link nk-sidebar-logo">
                                 <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
-                                     srcset="{% static 'admin_dash/images/logo2x.png 2x' %}" alt="logo">
+                                     srcset="{% static 'admin_dash/images/logo2x.png ' %}2x" alt="logo">
                                 <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
-                                     srcset="{% static 'admin_dash/images/logo-dark2x.png 2x' %}" alt="logo-dark">
+                                     srcset="{% static 'admin_dash/images/logo-dark2x.png ' %}2x" alt="logo-dark">
                             </a>
                         </div>
                     </div><!-- .nk-sidebar-element -->
@@ -201,11 +202,20 @@
                                             class="icon ni ni-menu"></em></a>
                                 </div>
                                 <div class="nk-header-brand d-xl-none">
+<<<<<<< HEAD
                                     <a href="{% url 'index' %}" class="logo-link nk-sidebar-logo">
                                         <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
                                              srcset="{% static 'admin_dash/images/logo2x.png 2x' %}" alt="logo">
                                         <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
                                              srcset="{% static 'admin_dash/images/logo-dark2x.png 2x' %}" alt="logo-dark">
+=======
+                                    <a href="{% url 'index' %}" class="logo-link">
+                                        <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
+                                             srcset="{% static 'admin_dash/images/logo2x.png' %} 2x"
+                                             alt="logo">
+                                        <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
+                                             srcset="{% static 'admin_dash/images/logo-dark2x.png' %} 2x" alt="logo-dark">
+>>>>>>> b49f882a000fb026f47f6d24fc4fda85edb536c3
                                     </a>
                                 </div><!-- .nk-header-brand -->
                                 <div class="nk-header-news d-none d-xl-block">
@@ -213,7 +223,7 @@
                                 </div><!-- .nk-header-news -->
                                 <div class="nk-header-tools">
                                     <ul class="nk-quick-nav">
-                                      
+
                                         <li class="dropdown user-dropdown">
                                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                                                 <div class="user-toggle">
@@ -222,7 +232,7 @@
                                                     </div>
                                                     <div class="user-info d-none d-md-block">
                                                         <div class="user-status">Administrator</div>
-                                                        <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                        <div class="user-name dropdown-indicator">{{ request.user }}</div>
                                                     </div>
                                                 </div>
                                             </a>
@@ -230,11 +240,11 @@
                                                 <div class="dropdown-inner user-card-wrap d-none d-md-block">
                                                     <div class="user-card">
                                                         <div class="user-avatar">
-                                                            <span>AB</span>
+                                                            <span>AD</span>
                                                         </div>
                                                         <div class="user-info">
-                                                            <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                            <span class="sub-text">info@softnio.com</span>
+                                                            <span class="lead-text">{{ request.user}}</span>
+                                                            <span class="sub-text">{{ request.email}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -256,7 +266,7 @@
                                                 </div>
                                                 <div class="dropdown-inner">
                                                     <ul class="link-list">
-                                                        <li><a href="#"><em
+                                                        <li><a href="{% url 'logout' %}"><em
                                                                 class="icon ni ni-signout"></em><span>Sign out</span></a>
                                                         </li>
                                                     </ul>
