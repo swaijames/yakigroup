@@ -1,6 +1,7 @@
+from django.contrib import messages
 from django.contrib.auth import login
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import *
@@ -9,6 +10,9 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
+
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 
 # from rest_framework.authentication import SessionAuthentication, BasicAuthentication
@@ -107,6 +111,7 @@ class HeroView(
     queryset = Hero.objects.all()
     serializer_class = HeroSerializer
 
+
 def index(request):
     return render(request, 'Tour/index.html')
 
@@ -126,3 +131,28 @@ def booking_edit(request):
 
 def customer(request):
     return render(request, 'Tour/customers.html')
+
+
+def admin_login(request):
+    try:
+        if request.user.is_authenticated:
+            return redirect("/dashboard/")
+        if request.method == 'POST':
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+            user_obj = User.objects.filter(username=username)
+            if not user_obj.exists():
+                messages.info(request, "Account not found")
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+            user_obj = authenticate(username=username, password=password)
+
+            if user_obj and user_obj.is_superuser:
+                login(request, user_obj)
+                return redirect('/dashboard/')
+
+            messages.info(request, ' Invalid password')
+            return redirect('/')
+        return render(request, 'auths/login.html')
+    except Exception as e:
+        print(e)
