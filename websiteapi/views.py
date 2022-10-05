@@ -10,9 +10,10 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
+from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 # from rest_framework.authentication import SessionAuthentication, BasicAuthentication
@@ -112,6 +113,7 @@ class HeroView(
     serializer_class = HeroSerializer
 
 
+@login_required
 def index(request):
     return render(request, 'Tour/index.html')
 
@@ -156,6 +158,11 @@ def admin_login(request):
         return render(request, 'auths/login.html')
     except Exception as e:
         print(e)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('/login')
 
 
 def reset(request):

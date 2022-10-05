@@ -11,5 +11,6 @@ urlpatterns = [
     path('customer', views.customer, name='customer'),
     path('yaki_dashboard', views.index, name='index'),
     path('login', views.admin_login, name='login'),
+    path('logout', views.logout_view, name='logout'),
     path('reset', views.reset, name='reset'),
 ]
