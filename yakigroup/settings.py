@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'websiteapi',
     'corsheaders',
-    'admin_dashboard',
 ]
 
 MIDDLEWARE = [
