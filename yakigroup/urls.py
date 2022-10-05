@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin_dashboard/', admin.site.urls),
     path('', include('websiteapi.urls')),
     path('profile/', views.ProfileView.as_view()),
-    path('dashboard/', include('admin_dashboard.urls')),
+    # path('dashboard/', views.DashboardView.as_view),
+    # path('dashboard/', include('websiteapi.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
