@@ -1,4 +1,3 @@
-
 {% load static %}
 {% block html %}
     <!DOCTYPE html>
@@ -184,7 +183,11 @@
                                             <span class="nk-menu-text">Sign Out</span>
                                         </a>
                                     </li><!-- .nk-menu-item -->
+<<<<<<< HEAD
                               
+=======
+
+>>>>>>> c61d8253215bd45d45b4ea1ac3a99effe160f198
                                 </ul><!-- .nk-menu -->
                             </div><!-- .nk-sidebar-menu -->
                         </div><!-- .nk-sidebar-content -->
@@ -204,6 +207,7 @@
                                 <div class="nk-header-brand d-xl-none">
                                     <a href="{% url 'index' %}" class="logo-link nk-sidebar-logo">
                                         <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
+<<<<<<< HEAD
                                              srcset="{% static 'admin_dash/images/logo2x.png 2x' %}" alt="logo">
                                         <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
                                              srcset="{% static 'admin_dash/images/logo-dark2x.png 2x' %}" alt="logo-dark">
@@ -211,6 +215,18 @@
                                 </div><!-- .nk-header-brand -->
                                 <div class="nk-header-news d-none d-xl-block">
                                  
+=======
+                                             srcset="{% static 'admin_dash/images/logo2x.png' %} 2x"
+                                             alt="logo">
+                                        <img class="logo-dark logo-img"
+                                             src="{% static 'admin_dash/images/logo-dark.png' %}"
+                                             srcset="{% static 'admin_dash/images/logo-dark2x.png' %} 2x"
+                                             alt="logo-dark">
+                                    </a>
+                                </div><!-- .nk-header-brand -->
+                                <div class="nk-header-news d-none d-xl-block">
+
+>>>>>>> c61d8253215bd45d45b4ea1ac3a99effe160f198
                                 </div><!-- .nk-header-news -->
                                 <div class="nk-header-tools">
                                     <ul class="nk-quick-nav">
@@ -234,14 +250,14 @@
                                                             <span>AD</span>
                                                         </div>
                                                         <div class="user-info">
-                                                            <span class="lead-text">{{ request.user}}</span>
-                                                            <span class="sub-text">{{ request.email}}</span>
+                                                            <span class="lead-text">{{ request.user }}</span>
+                                                            <span class="sub-text">{{ request.user.email }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="dropdown-inner">
                                                     <ul class="link-list">
-                                                        <li><a href="#"><em
+                                                        <li><a href="{% url 'user_profile' %}"><em
                                                                 class="icon ni ni-user-alt"></em><span>View Profile</span></a>
                                                         </li>
                                                         <li><a href="html/tour/settings.html"><em
