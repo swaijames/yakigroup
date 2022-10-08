@@ -12,7 +12,10 @@ urlpatterns = [
     path('yaki_dashboard', views.index, name='index'),
     path('login', views.admin_login, name='login'),
     path('logout', views.logout_view, name='logout'),
-    path('reset', views.reset, name='reset'),
     path('user_profile', views.user_profile, name='user_profile'),
     path('profile', views.profile, name='profile'),
+
+    path('password_reset_confirm/<slug:uid>/', views.change_password, name='password_reset_confirm'),
+    path('password_reset_done/', views.password_reset_done, name='password_reset_done'),
+    path('reset', views.reset, name='reset'),
 ]
