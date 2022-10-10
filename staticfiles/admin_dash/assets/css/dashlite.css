@@ -14055,6 +14055,15 @@ a:hover .btn-trigger:before {
 .card-bordered {
   border: 1px solid #15803d;
 }
+.card-bordered-info {
+  border: 1px solid #15803d;
+  background-color: #15803d;
+}
+
+.inner-info{
+  background-color: #dcfce7;
+
+}
 .top-title{
   color: #dcfce7 !important;
 }
