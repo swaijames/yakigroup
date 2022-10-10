@@ -23,16 +23,15 @@
                                                     class="icon ni ni-download-cloud"></em><span>Export</span></a>
                                             </li>
                                             <li class="nk-block-tools-opt">
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-primary"
-                                                       data-bs-toggle="dropdown"><em
-                                                            class="icon ni ni-plus"></em></a>
+                                                <div class="btn btn-white btn-outline-light">
+                                                    <a href="{% url 'booking_add' %}" class="icon ni ni-plus"><em
+                                                            ></em></a>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <ul class="link-list-opt no-bdr">
                                                             <li>
-                                                                <a href="html/tour/booking-add.html"><span>Add Booking</span></a>
+                                                                <a href=""><span>Add Booking</span></a>
                                                             </li>
-                                                            <li><a href="#"><span>Import Booking</span></a></li>
+                                                            {% comment %} <li><a href="#"><span>Import Booking</span></a></li> {% endcomment %}
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -87,118 +86,7 @@
                                                                        data-target="cardTools"><em
                                                                             class="icon ni ni-arrow-left"></em></a>
                                                                 </li><!-- li -->
-                                                                <li>
-                                                                    <div class="dropdown">
-                                                                        <a href="#"
-                                                                           class="btn btn-trigger btn-icon dropdown-toggle"
-                                                                           data-bs-toggle="dropdown">
-                                                                            <div class="dot dot-primary"></div>
-                                                                            <em class="icon ni ni-filter-alt"></em>
-                                                                        </a>
-                                                                        <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
-                                                                            <div class="dropdown-head">
-                                                                                <span class="sub-title dropdown-title">Filter Bookings</span>
-                                                                                <div class="dropdown">
-                                                                                    <a href="#"
-                                                                                       class="btn btn-sm btn-icon">
-                                                                                        <em class="icon ni ni-more-h"></em>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="dropdown-body dropdown-body-rg">
-                                                                                <div class="row gx-6 gy-3">
-                                                                                    <div class="col-12">
-                                                                                        <div class="custom-control custom-control-sm custom-checkbox">
-                                                                                            <input type="checkbox"
-                                                                                                   class="custom-control-input"
-                                                                                                   id="hasEmail">
-                                                                                            <label class="custom-control-label"
-                                                                                                   for="hasEmail">
-                                                                                                Email
-                                                                                                Verified</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-6">
-                                                                                        <div class="form-group">
-                                                                                            <label class="overline-title overline-title-alt">Status</label>
-                                                                                            <select class="form-select js-select2 js-select2-sm">
-                                                                                                <option value="any">
-                                                                                                    Any Status
-                                                                                                </option>
-                                                                                                <option value="paid">
-                                                                                                    Paid
-                                                                                                </option>
-                                                                                                <option value="due">
-                                                                                                    Due
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-6">
-                                                                                        <div class="form-group">
-                                                                                            <label class="overline-title overline-title-alt">Destination
-                                                                                                Type</label>
-                                                                                            <select class="form-select js-select2 js-select2-sm">
-                                                                                                <option value="any">
-                                                                                                    Any Type
-                                                                                                </option>
-                                                                                                <option value="single">
-                                                                                                    Single
-                                                                                                </option>
-                                                                                                <option value="double">
-                                                                                                    Double
-                                                                                                </option>
-                                                                                                <option value="delux">
-                                                                                                    Delux
-                                                                                                </option>
-                                                                                                <option value="sdelux">
-                                                                                                    Super Delux
-                                                                                                </option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-12">
-                                                                                        <div class="form-group">
-                                                                                            <button type="button"
-                                                                                                    class="btn btn-secondary">
-                                                                                                Filter
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="dropdown-foot between">
-                                                                                <a class="clickable" href="#">Reset
-                                                                                    Filter</a>
-                                                                                <a href="#">Save Filter</a>
-                                                                            </div>
-                                                                        </div><!-- .filter-wg -->
-                                                                    </div><!-- .dropdown -->
-                                                                </li><!-- li -->
-                                                                <li>
-                                                                    <div class="dropdown">
-                                                                        <a href="#"
-                                                                           class="btn btn-trigger btn-icon dropdown-toggle"
-                                                                           data-bs-toggle="dropdown">
-                                                                            <em class="icon ni ni-setting"></em>
-                                                                        </a>
-                                                                        <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
-                                                                            <ul class="link-check">
-                                                                                <li><span>Show</span></li>
-                                                                                <li class="active"><a href="#">10</a>
-                                                                                </li>
-                                                                                <li><a href="#">20</a></li>
-                                                                                <li><a href="#">50</a></li>
-                                                                            </ul>
-                                                                            <ul class="link-check">
-                                                                                <li><span>Order</span></li>
-                                                                                <li class="active"><a href="#">DESC</a>
-                                                                                </li>
-                                                                                <li><a href="#">ASC</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div><!-- .dropdown -->
-                                                                </li><!-- li -->
+                                                      
                                                             </ul><!-- .btn-toolbar -->
                                                         </div><!-- .toggle-content -->
                                                     </div><!-- .toggle-wrap -->

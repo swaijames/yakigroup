@@ -138,6 +138,12 @@ def booking_edit(request):
 def customer(request):
     return render(request, 'Tour/customers.html')
 
+def room_list(request):
+    return render(request, 'Tour/room-list.html')
+
+def room_type(request):
+    return render(request, 'Tour/room-type.html')
+
 
 
 def admin_login(request):
