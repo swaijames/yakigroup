@@ -1,7 +1,7 @@
 {% load static %}
 {% block html %}
-<!DOCTYPE html>
-<html lang="zxx" class="js">
+    <!DOCTYPE html>
+    <html lang="zxx" class="js">
 
     {% block head %}
         <head>
@@ -22,6 +22,7 @@
     {% endblock head %}
 
     {% block body %}
+<<<<<<< HEAD
 <body class="nk-body bg-white npc-default pg-auth">
     <div class="nk-app-root">
         <!-- main @s -->
@@ -53,17 +54,67 @@
                                         </div>
                                         <div class="form-control-wrap">
                                             <input type="text" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address">
+=======
+        <body class="nk-body bg-white npc-default pg-auth">
+        <div class="nk-app-root">
+            <!-- main @s -->
+            <div class="nk-main ">
+                <!-- wrap @s -->
+                <div class="nk-wrap nk-wrap-nosidebar">
+                    <!-- content @s -->
+                    <div class="nk-content ">
+                        <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
+                            <div class="brand-logo pb-4 text-center">
+                                <a href="{% url 'index' %}" class="logo-link nk-sidebar-logo">
+                                    <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
+                                         srcset="{% static 'admin_dash/images/logo2x.png 2x' %}" alt="logo">
+                                    <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
+                                         srcset="{% static 'admin_dash/images/logo-dark2x.png 2x' %}" alt="logo-dark">
+                                </a>
+                            </div>
+                            <div class="card">
+                                <div class="card-inner card-inner-lg">
+                                    <div class="nk-block-head">
+                                        <div class="nk-block-head-content">
+                                            <h4 class="nk-block-title center">Reset password</h4>
+>>>>>>> 1dc3e180dd9dec3407cd7e3ffd21e44945e24334
                                         </div>
                                     </div>
-                                
-                                    <div class="form-group">
-                                        <button class="btn btn-lg btn-primary btn-block">Sign in</button>
-                                    </div>
-                                </form>
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div style="color:darkgreen"
+                                                 class="container mt-3 message alert alert-{{ message }} text-center">{{ message }}</div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <form action="" method="post">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="form-label-group">
+                                                <label class="form-label" for="default-01">Email Address</label>
+                                            </div>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control form-control-lg" id="default-01"
+                                                    name="email"   placeholder="Enter your email address">
+                                            </div>
+                                        </div>
 
+                                        <div class="form-group">
+                                            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit Email</button>
+                                        </div>
+                                    </form>
+
+                                </div>
                             </div>
                         </div>
+                        {% block footer %}
+
+
+                            <script src="{% static 'admin_dash/assets/js/bundle.js?ver=3.0.3' %}"></script>
+                            <script src="{% static 'admin_dash/assets/js/scripts.js?ver=3.0.3' %}"></script>
+                            <!-- .modal -->
+                        {% endblock footer %}
                     </div>
+<<<<<<< HEAD
                     {% block footer %}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,14 +136,15 @@
                     <script src="{% static 'admin_dash/assets/js/bundle.js?ver=3.0.3' %}"></script>
                     <script src="{% static 'admin_dash/assets/js/scripts.js?ver=3.0.3' %}"></script><!-- .modal -->
                 {% endblock footer %}
+=======
+                    <!-- wrap @e -->
+>>>>>>> 1dc3e180dd9dec3407cd7e3ffd21e44945e24334
                 </div>
-                <!-- wrap @e -->
+                <!-- content @e -->
             </div>
-            <!-- content @e -->
+            <!-- main @e -->
         </div>
-        <!-- main @e -->
-    </div>
-    <!-- app-root @e -->
- {% endblock body %}
-</html>
+        <!-- app-root @e -->
+    {% endblock body %}
+    </html>
 {% endblock html %}

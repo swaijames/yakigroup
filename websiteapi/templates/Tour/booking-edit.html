@@ -1,167 +1,179 @@
+{% extends 'Tour/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="zxx" class="js">
+{% block content %}
 
-<head>
-    <base href="../../">
-    <meta charset="utf-8">
-    <meta name="author" content="yakigroup">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {#    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">#}
-    <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="{% static 'admin_dash/images/favicon.png' %}">
-    <!-- Page Title  -->
-    <title>tour Management - Edit Booking | DashLite Admin Template</title>
-    <!-- StyleSheets  -->
-    <link rel="stylesheet" href="{% static 'admin_dash/assets/css/dashlite.css?ver=3.0.3' %}">
-    <link id="skin-default" rel="stylesheet" href="{% static 'admin_dash/assets/css/theme.css?ver=3.0.3' %}">
-</head>
-
-<body class="nk-body bg-lighter npc-general has-sidebar ">
-<div class="nk-app-root">
-    <!-- main @s -->
-    <div class="nk-main ">
-        <!-- sidebar @s -->
-        <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
-            <div class="nk-sidebar-element nk-sidebar-head">
-                <div class="nk-menu-trigger">
-                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em
-                            class="icon ni ni-arrow-left"></em></a>
-                    <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex"
-                       data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+    <!-- content @s -->
+    <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="nk-block-head nk-block-head-sm">
+                        <div class="nk-block-between">
+                            <div class="nk-block-head-content">
+                                <h3 class="nk-block-title page-title">Edit Booking</h3>
+                            </div><!-- .nk-block-head-content -->
+                        </div><!-- .nk-block-between -->
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        <div class="card card-bordered">
+                            <div class="card-inner">
+                                <div class="row gy-4">
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="first-name">First Name</label>
+                                            <input type="text" class="form-control" id="first-name"
+                                                   placeholder="First Name" value="Abu Bin">
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="last-name">Last Name</label>
+                                            <input type="text" class="form-control" id="last-name"
+                                                   placeholder="Last Name" value="Ishtiyak">
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Gender</label>
+                                            <div class="form-control-wrap">
+                                                <select class="form-select js-select2"
+                                                        data-placeholder="Select multiple options">
+                                                    <option value="option_select_gender">Male</option>
+                                                    <option value="option_select_gender">Female</option>
+                                                    <option value="option_select_gender">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="phone-no">Phone</label>
+                                            <input type="text" class="form-control" id="phone-no"
+                                                   placeholder="Phone no" value="+811 847-4958">
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="email">Email Address</label>
+                                            <input type="email" class="form-control" id="email"
+                                                   placeholder="Email Address" value="info@softnio.com">
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="address">Adddress</label>
+                                            <input type="text" class="form-control" id="address"
+                                                   placeholder="Address"
+                                                   value="102 Cherry Ridge Drive, Detroit">
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Upload Photo</label>
+                                            <div class="form-control-wrap">
+                                                <div class="form-file">
+                                                    <input type="file" multiple class="form-file-input"
+                                                           id="customFile">
+                                                    <label class="form-file-label" for="customFile">Choose
+                                                        file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Select an package</label>
+                                            <div class="form-control-wrap">
+                                                <select class="form-select js-select2"
+                                                        data-placeholder="Select multiple options">
+                                                    <option value="option_select_name">Continental</option>
+                                                    <option value="option_select_name">Honeymoon Package
+                                                    </option>
+                                                    <option value="option_select_name">Vacation Package</option>
+                                                    <option value="option_select_name">Spring Package</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Select Room Type</label>
+                                            <div class="form-control-wrap">
+                                                <select class="form-select js-select2">
+                                                    <option value="default_option">Super Delux</option>
+                                                    <option value="option_select_room_type">Delux</option>
+                                                    <option value="option_select_room_type">Super Delux</option>
+                                                    <option value="option_select_room_type">Single</option>
+                                                    <option value="option_select_room_type">Double</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Arrived Date</label>
+                                            <div class="form-control-wrap">
+                                                <div class="form-icon form-icon-right">
+                                                    <em class="icon ni ni-calendar"></em>
+                                                </div>
+                                                <input type="text" class="form-control date-picker"
+                                                       data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd"
+                                                       value="10 Feb 2020">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label">Depart Date</label>
+                                            <div class="form-control-wrap">
+                                                <div class="form-icon form-icon-right">
+                                                    <em class="icon ni ni-calendar"></em>
+                                                </div>
+                                                <input type="text" class="form-control date-picker"
+                                                       data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd"
+                                                       value="12 Feb 2020">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                        <div class="form-group">
+                                            <label class="form-label" for="total-person">Total Person</label>
+                                            <input type="number" class="form-control" id="total-person"
+                                                   placeholder="Total Person" value="02">
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                    <div class="col-md-12">
+                                        <div class="form-gupro">
+                                            <label class="form-label" for="default-textarea">Note</label>
+                                            <div class="form-control-wrap">
+                                                <textarea class="form-control no-resize" id="default-textarea">Large text area content</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Update Booking
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--col-->
+                                </div>
+                                <!--row-->
+                            </div><!-- .card-inner-group -->
+                        </div><!-- .card -->
+                    </div><!-- .nk-block -->
                 </div>
-                <div class="nk-sidebar-brand">
-                    <a href="{% url 'index' %}" class="logo-link nk-sidebar-logo">
-                        <img class="logo-light logo-img" src="{% static 'admin_dash/images/logo.png' %}"
-                             srcset="{% static 'admin_dash/images/logo2x.png' %} 2x" alt="logo">
-                        <img class="logo-dark logo-img" src="{% static 'admin_dash/images/logo-dark.png' %}"
-                             srcset="{% static 'admin_dash/images/logo-dark2x.png' %} 2x" alt="logo-dark">
-                    </a>
-                </div>
-            </div><!-- .nk-sidebar-element -->
-            <div class="nk-sidebar-element nk-sidebar-body">
-                <div class="nk-sidebar-content">
-                    <div class="nk-sidebar-menu" data-simplebar>
-                        <ul class="nk-menu">
-                            <li class="nk-menu-item">
-                                <a href="{% url 'index' %}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
-                                    <span class="nk-menu-text">Dashboard</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="{% url 'booking' %}" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-calendar-booking-fill"></em></span>
-                                    <span class="nk-menu-text">Bookings</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="{% url 'booking' %}" class="nk-menu-link"><span class="nk-menu-text">All Bookings</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{% url 'booking_add' %}" class="nk-menu-link"><span
-                                                class="nk-menu-text">Add Booking</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{% url 'booking_edit' %}" class="nk-menu-link"><span
-                                                class="nk-menu-text">Edit Booking</span></a>
-                                    </li>
-                                </ul>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-home-fill"></em></span>
-                                    <span class="nk-menu-text">Room</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/room-list.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">All Rooms</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/room-type.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">Room Types</span></a>
-                                    </li>
-                                </ul>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-reports"></em></span>
-                                    <span class="nk-menu-text">Reports</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/report-stocks.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">Stocks</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/report-expenses.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">Expenses</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="" class="nk-menu-link"><span
-                                                class="nk-menu-text">Booking</span></a>
-                                    </li>
-                                </ul>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{% url 'customer' %}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
-                                    <span class="nk-menu-text">Customers</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item has-sub">
-                                <a href="#" class="nk-menu-link nk-menu-toggle">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
-                                    <span class="nk-menu-text">Payment</span>
-                                </a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/payment-methods.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">Payment Methods</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/invoice-list.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">Invocie List</span></a>
-                                    </li>
-                                    <li class="nk-menu-item">
-                                        <a href="html/tour/invoice-details.html" class="nk-menu-link"><span
-                                                class="nk-menu-text">Invocie Details</span></a>
-                                    </li>
-                                </ul>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="html/tour/support.html" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-chat-circle-fill"></em></span>
-                                    <span class="nk-menu-text">Support</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="html/tour/settings.html" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-setting-alt-fill"></em></span>
-                                    <span class="nk-menu-text">Settings</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-heading">
-                                <h6 class="overline-title text-primary-alt">Return to</h6>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="{% url 'index' %}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-dashlite-alt"></em></span>
-                                    <span class="nk-menu-text">Main Dashboard</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item">
-                                <a href="html/components.html" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span>
-                                    <span class="nk-menu-text">All Components</span>
-                                </a>
-                            </li><!-- .nk-menu-item -->
-                        </ul><!-- .nk-menu -->
-                    </div><!-- .nk-sidebar-menu -->
-                </div><!-- .nk-sidebar-content -->
-            </div><!-- .nk-sidebar-element -->
+            </div>
         </div>
+<<<<<<< HEAD
         <!-- sidebar @e -->
         <!-- wrap @s -->
         <div class="nk-wrap ">
@@ -584,14 +596,8 @@
             <!-- footer @e -->
         </div>
         <!-- wrap @e -->
+=======
+>>>>>>> 1dc3e180dd9dec3407cd7e3ffd21e44945e24334
     </div>
-    <!-- main @e -->
-</div>
-<!-- app-root @e -->
-<!-- select region modal -->
-<!-- JavaScript -->
-<script src="{% static 'admin_dash/assets/js/bundle.js?ver=3.0.3' %}"></script>
-<script src="{% static 'admin_dash/assets/js/scripts.js?ver=3.0.3' %}"></script>
-</body>
-
-</html>
+    <!-- content @e -->
+{% endblock content %}

@@ -1,11 +1,14 @@
 from django.contrib import messages
 from django.contrib.auth import login, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import *
+from django.conf import settings
+from django.core.mail import send_mail
 from rest_framework import generics, mixins
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
@@ -136,6 +139,7 @@ def customer(request):
     return render(request, 'Tour/customers.html')
 
 
+
 def admin_login(request):
     try:
         if request.user.is_authenticated:
@@ -155,7 +159,7 @@ def admin_login(request):
                 return redirect('/yaki_dashboard')
 
             messages.info(request, ' Invalid password')
-            return redirect('/')
+            return redirect('/login')
         return render(request, 'auths/login.html')
     except Exception as e:
         print(e)
@@ -167,7 +171,43 @@ def logout_view(request):
 
 
 def reset(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        if User.objects.filter(email=email).exists():
+            uid = User.objects.get(email=email)
+            url = f'http://127.0.0.1:9000/password_reset_confirm/{uid.profile.uuid}'
+            send_mail('reset', url, settings.EMAIL_HOST_USER, [email], fail_silently=False, )
+            return redirect('/password_reset_done')
+        else:
+            messages.error(request, "email address is not exists")
     return render(request, 'auths/reset.html')
+
+
+def change_password(request, uid):
+    try:
+        if Profile.objects.filter(uuid=uid).exists():
+            if request.method == 'POST':
+                pass1 = 'password1' in request.POST and request.POST['password1']
+                pass2 = 'password2' in request.POST and request.POST['password2']
+                if pass1 == pass2:
+                    p = Profile.objects.get(uuid=uid)
+                    u = p.user
+                    user = User.objects.get(username=u)
+                    user.password = make_password(pass1)
+                    user.save()
+                    messages.success(request, "password has been reset successfully")
+                    return redirect('login')
+                else:
+                    messages.error(request, "two password did not match")
+        else:
+            return HttpResponse('invalid url')
+    except:
+        return HttpResponse('invalid url')
+    return render(request, 'auths/password_reset_confirm.html')
+
+
+def password_reset_done(request):
+    return render(request, 'auths/password_reset_done.html')
 
 
 def user_profile(request):
@@ -190,7 +230,6 @@ def profile(request):
             return redirect('/logout/')
         else:
             if "old_password" in form.errors:
-
                 messages.error(request, "Your old password was entered incorrectly")
                 return redirect('/user_profile')
             elif "The two password fields didn’t match" in form.errors:
@@ -199,8 +238,8 @@ def profile(request):
             else:
                 messages.error(request, "The password is too similar to the last name")
                 return redirect('/user_profile')
-
     form = PasswordChangeForm(request.user)
+    print(form)
 
     context = {
         "form": form

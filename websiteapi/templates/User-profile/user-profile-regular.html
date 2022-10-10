@@ -108,6 +108,14 @@
                     </ul><!-- .nav-tabs -->
                     <div class="tab-content">
                         <div class="tab-pane active" id="personal">
+                            {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <li{% if message.tags %}
+                                            class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                             <form method="post" action="{% url 'profile' %}">
                                 {% csrf_token %}
                                 <div class="row gy-4">
@@ -158,35 +166,6 @@
                                                 <a href="#" data-bs-dismiss="modal" class="link link-light">Cancel</a>
                                             </li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </form>
-                            <form action="{% url 'profile' %}" method="post">
-                                {% csrf_token %}
-                                <br>
-                                <div class="row gy-4">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label" for="display-name">old password</label>
-                                            {% render_field form.old_password class="form-control form-control-lg" %}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label" for="display-name">new password</label>
-                                            {% render_field form.new_password1 class="form-control form-control-lg" %}
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label" for="display-name">confirm password</label>
-                                            {% render_field form.new_password2 class="form-control form-control-lg" %}
-
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-lg btn-primary" type="submit">Change</button>
                                     </div>
                                 </div>
                             </form>
