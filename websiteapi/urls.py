@@ -14,6 +14,10 @@ urlpatterns = [
     path('logout', views.logout_view, name='logout'),
     path('user_profile', views.user_profile, name='user_profile'),
     path('profile', views.profile, name='profile'),
+    path('room_list', views.room_list, name='room_list'),
+    path('room_type', views.room_type, name='room_type'),
+
+
 
     path('password_reset_confirm/<slug:uid>/', views.change_password, name='password_reset_confirm'),
     path('password_reset_done/', views.password_reset_done, name='password_reset_done'),

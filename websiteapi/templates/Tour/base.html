@@ -83,15 +83,15 @@
                                         </a>
                                         <ul class="nk-menu-sub">
                                             <li class="nk-menu-item">
-                                                <a href="html/tour/room-list.html" class="nk-menu-link"><span
+                                                <a href="{% url 'booking_add' %}" class="nk-menu-link"><span
                                                         class="nk-menu-text">Add Destination</span></a>
                                             </li>
                                             <li class="nk-menu-item">
-                                                <a href="html/tour/room-type.html" class="nk-menu-link"><span
+                                                <a href="{% url 'room_type' %}" class="nk-menu-link"><span
                                                         class="nk-menu-text">Destination Types</span></a>
                                             </li>
                                             <li class="nk-menu-item">
-                                                <a href="html/tour/room-list.html" class="nk-menu-link"><span
+                                                <a href="{% url 'room_list' %}" class="nk-menu-link"><span
                                                         class="nk-menu-text">All Destination</span></a>
                                             </li>
                                         </ul>
@@ -230,7 +230,7 @@
                                                 </div>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
-                                                <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                <div class="dropdown-inner user-card-wrap d-none d-md-block">
                                                     <div class="user-card">
                                                         <div class="user-avatar">
                                                             <span>AD</span>
@@ -251,9 +251,6 @@
                                                         </li>
                                                         <li><a href="html/tour/settings-activity-log.html"><em
                                                                 class="icon ni ni-activity-alt"></em><span>Login Activity</span></a>
-                                                        </li>
-                                                        <li><a class="dark-switch" href="#"><em
-                                                                class="icon ni ni-moon"></em><span>Dark Mode</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -361,6 +358,7 @@
 
 
                     {% block content %}
+
                     {% endblock content %}
                     {% block footer %}
                         <div class="nk-footer">
