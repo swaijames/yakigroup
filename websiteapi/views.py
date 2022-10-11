@@ -152,6 +152,10 @@ def room_list(request):
 def room_type(request):
     return render(request, 'Tour/room-type.html')
 
+def destination_add(request):
+    return render(request, 'Tour/destination-add.html')
+
+
 
 def admin_login(request):
     try:

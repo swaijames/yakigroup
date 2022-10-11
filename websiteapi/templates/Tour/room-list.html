@@ -1,183 +1,7 @@
 {% extends 'Tour/base.html' %}
 {% load static %}
 {% block content %}
-            <div class="nk-wrap ">
-                <!-- main header @s -->
-                <div class="nk-header nk-header-fixed is-light">
-                    <div class="container-fluid">
-                        <div class="nk-header-wrap">
-                            <div class="nk-menu-trigger d-xl-none ms-n1">
-                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
-                            </div>
-                            <div class="nk-header-brand d-xl-none">
-                                <a href="html/index.html" class="logo-link">
-                                    <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
-                                </a>
-                            </div><!-- .nk-header-brand -->
-                            <div class="nk-header-news d-none d-xl-block">
-                                <div class="nk-news-list">
-                                    <a class="nk-news-item" href="#">
-                                        <div class="nk-news-icon">
-                                            <em class="icon ni ni-card-view"></em>
-                                        </div>
 
-                                    </a>
-                                </div>
-                            </div><!-- .nk-header-news -->
-                            <div class="nk-header-tools">
-                                <ul class="nk-quick-nav">
-                                    <li class="dropdown language-dropdown d-none d-sm-block me-n1">
-                                        <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
-                                            <div class="quick-icon border border-light">
-                                                <img class="icon" src="./images/flags/english-sq.png" alt="">
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-s1">
-                                            <ul class="language-list">
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/english.png" alt="" class="language-flag">
-                                                        <span class="language-name">English</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/spanish.png" alt="" class="language-flag">
-                                                        <span class="language-name">Español</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/french.png" alt="" class="language-flag">
-                                                        <span class="language-name">Français</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="language-item">
-                                                        <img src="./images/flags/turkey.png" alt="" class="language-flag">
-                                                        <span class="language-name">Türkçe</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li><!-- .dropdown -->
-                                    <li class="dropdown user-dropdown">
-                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                            <div class="user-toggle">
-                                                <div class="user-avatar sm">
-                                                    <em class="icon ni ni-user-alt"></em>
-                                                </div>
-                                                <div class="user-info d-none d-md-block">
-                                                    <div class="user-status">Administrator</div>
-                                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
-                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
-                                                <div class="user-card">
-                                                    <div class="user-avatar">
-                                                        <span>AB</span>
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                        <span class="sub-text">info@softnio.com</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown-inner">
-                                                <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/tour/settings.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/tour/settings-activity-log.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="dropdown-inner">
-                                                <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li><!-- .dropdown -->
-                                    <li class="dropdown notification-dropdown me-n1">
-                                        <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
-                                            <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end dropdown-menu-s1">
-                                            <div class="dropdown-head">
-                                                <span class="sub-title nk-dropdown-title">Notifications</span>
-                                                <a href="#">Mark All as Read</a>
-                                            </div>
-                                            <div class="dropdown-body">
-                                                <div class="nk-notification">
-                                                    <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-icon">
-                                                            <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                                        </div>
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
-                                                            <div class="nk-notification-time">2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-icon">
-                                                            <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                                        </div>
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
-                                                            <div class="nk-notification-time">2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-icon">
-                                                            <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                                        </div>
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
-                                                            <div class="nk-notification-time">2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-icon">
-                                                            <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                                        </div>
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
-                                                            <div class="nk-notification-time">2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-icon">
-                                                            <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                                        </div>
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
-                                                            <div class="nk-notification-time">2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-icon">
-                                                            <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                                        </div>
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
-                                                            <div class="nk-notification-time">2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- .nk-notification -->
-                                            </div><!-- .nk-dropdown-body -->
-                                            <div class="dropdown-foot center">
-                                                <a href="#">View All</a>
-                                            </div>
-                                        </div>
-                                    </li><!-- .dropdown -->
-                                </ul><!-- .nk-quick-nav -->
-                            </div><!-- .nk-header-tools -->
-                        </div><!-- .nk-header-wrap -->
-                    </div><!-- .container-fliud -->
-                </div>
                 <!-- main header @e -->
                 <!-- content @s -->
                 <div class="nk-content ">
@@ -187,23 +11,15 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between g-3">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Room List</h3>
+                                            <h3 class="nk-block-title page-title">Destination List</h3>
                                             <div class="nk-block-des text-soft">
-                                                <p>Here is our verious rooms.</p>
+                                                <p>Here is our verious destinations.</p>
                                             </div>
                                         </div><!-- .nk-block-head-content -->
                                         <div class="nk-block-head-content">
                                             <ul class="nk-block-tools g-3">
                                                 <li>
-                                                    <div class="drodown">
-                                                        <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-bs-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
-                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                            <ul class="link-list-opt no-bdr">
-                                                                <li><a data-bs-toggle="modal" href="#add-room"><span>Add Room</span></a></li>
-                                                                <li><a href="#"><span>Import Room</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+
                                                 </li>
                                             </ul>
                                         </div><!-- .nk-block-head-content -->
@@ -242,80 +58,8 @@
                                                                             <li class="toggle-close">
                                                                                 <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-arrow-left"></em></a>
                                                                             </li><!-- li -->
-                                                                            <li>
-                                                                                <div class="dropdown">
-                                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-                                                                                        <div class="dot dot-primary"></div>
-                                                                                        <em class="icon ni ni-filter-alt"></em>
-                                                                                    </a>
-                                                                                    <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
-                                                                                        <div class="dropdown-head">
-                                                                                            <span class="sub-title dropdown-title">Filter Rooms</span>
-                                                                                            <div class="dropdown">
-                                                                                                <a href="#" class="btn btn-sm btn-icon">
-                                                                                                    <em class="icon ni ni-more-h"></em>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="dropdown-body dropdown-body-rg">
-                                                                                            <div class="row gx-6 gy-3">
-                                                                                                <div class="col-6">
-                                                                                                    <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Status</label>
-                                                                                                        <select class="form-select js-select2 js-select2-sm">
-                                                                                                            <option value="any">Any Status</option>
-                                                                                                            <option value="paid">Booked</option>
-                                                                                                            <option value="open">Open</option>
-                                                                                                            <option value="inactive">Inactive</option>
-                                                                                                        </select>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-6">
-                                                                                                    <div class="form-group">
-                                                                                                        <label class="overline-title overline-title-alt">Room Type</label>
-                                                                                                        <select class="form-select js-select2 js-select2-sm">
-                                                                                                            <option value="any">Any Type</option>
-                                                                                                            <option value="single">Single</option>
-                                                                                                            <option value="double">Double</option>
-                                                                                                            <option value="delux">Delux</option>
-                                                                                                            <option value="sdelux">Super Delux</option>
-                                                                                                        </select>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <button type="button" class="btn btn-secondary">Filter</button>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="dropdown-foot between">
-                                                                                            <a class="clickable" href="#">Reset Filter</a>
-                                                                                            <a href="#">Save Filter</a>
-                                                                                        </div>
-                                                                                    </div><!-- .filter-wg -->
-                                                                                </div><!-- .dropdown -->
-                                                                            </li><!-- li -->
-                                                                            <li>
-                                                                                <div class="dropdown">
-                                                                                    <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-bs-toggle="dropdown">
-                                                                                        <em class="icon ni ni-setting"></em>
-                                                                                    </a>
-                                                                                    <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
-                                                                                        <ul class="link-check">
-                                                                                            <li><span>Show</span></li>
-                                                                                            <li class="active"><a href="#">10</a></li>
-                                                                                            <li><a href="#">20</a></li>
-                                                                                            <li><a href="#">50</a></li>
-                                                                                        </ul>
-                                                                                        <ul class="link-check">
-                                                                                            <li><span>Order</span></li>
-                                                                                            <li class="active"><a href="#">DESC</a></li>
-                                                                                            <li><a href="#">ASC</a></li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div><!-- .dropdown -->
-                                                                            </li><!-- li -->
+                                                                       
+                                                                          
                                                                         </ul><!-- .btn-toolbar -->
                                                                     </div><!-- .toggle-content -->
                                                                 </div><!-- .toggle-wrap -->
@@ -342,13 +86,11 @@
                                                                 <label class="custom-control-label" for="uid"></label>
                                                             </div>
                                                         </div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Room No.</span></div>
-                                                        <div class="nk-tb-col"><span class="sub-text">Room Type</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">AC/Non AC</span></div>
-                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Meal</span></div>
-                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Bed Capacity</span></div>
-                                                        <div class="nk-tb-col tb-col-mb"><span class="sub-text">Rent</span></div>
-                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Destination</span></div>
+                                                        <div class="nk-tb-col"><span class="sub-text">Departure</span></div>
+                                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Departure Time</span></div>
+                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Return Time</span></div>
+                                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Departure Status</span></div>
                                                         <div class="nk-tb-col nk-tb-col-tools text-end">
                                                             <div class="dropdown">
                                                                 <a href="#" class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-bs-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
@@ -399,12 +141,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>1</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">32.00 <span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-primary">Booked</span>
-                                                        </div>
+                                                    
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -443,12 +180,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>1</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">35.00 <span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-warning">Pending</span>
-                                                        </div>
+                                                    
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -487,12 +219,8 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>2</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">44.99 <span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Open</span>
-                                                        </div>
+                                           
+                                                    
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -531,12 +259,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>2</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">48.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Open</span>
-                                                        </div>
+                                                
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -575,12 +298,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>2</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">53.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-primary">Booked</span>
-                                                        </div>
+                                                
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -619,12 +337,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>3</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">68.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-primary">Booked</span>
-                                                        </div>
+                                                  
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -663,12 +376,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>3</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">68.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-success">Open</span>
-                                                        </div>
+                                                   
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -707,12 +415,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>3</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">450<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-danger">Inactive</span>
-                                                        </div>
+                                                      
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -751,12 +454,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>3</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">499.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-danger">Inactive</span>
-                                                        </div>
+                                             
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -795,12 +493,7 @@
                                                         <div class="nk-tb-col tb-col-lg">
                                                             <span>5</span>
                                                         </div>
-                                                        <div class="nk-tb-col tb-col-mb">
-                                                            <span class="tb-amount">999.99<span class="currency">USD</span></span>
-                                                        </div>
-                                                        <div class="nk-tb-col tb-col-md">
-                                                            <span class="tb-status text-danger">Inactive</span>
-                                                        </div>
+                                                     
                                                         <div class="nk-tb-col nk-tb-col-tools">
                                                             <ul class="nk-tb-actions gx-1">
                                                                 <li>
@@ -881,338 +574,114 @@
     </div>
     <!-- app-root @e -->
     <!-- select region modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="region">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
-                <div class="modal-body modal-body-md">
-                    <h5 class="title mb-4">Select Your Country</h5>
-                    <div class="nk-country-region">
-                        <ul class="country-list text-center gy-2">
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/arg.png" alt="" class="country-flag">
-                                    <span class="country-name">Argentina</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/aus.png" alt="" class="country-flag">
-                                    <span class="country-name">Australia</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/bangladesh.png" alt="" class="country-flag">
-                                    <span class="country-name">Bangladesh</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/canada.png" alt="" class="country-flag">
-                                    <span class="country-name">Canada <small>(English)</small></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/china.png" alt="" class="country-flag">
-                                    <span class="country-name">Centrafricaine</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/china.png" alt="" class="country-flag">
-                                    <span class="country-name">China</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/french.png" alt="" class="country-flag">
-                                    <span class="country-name">France</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/germany.png" alt="" class="country-flag">
-                                    <span class="country-name">Germany</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/iran.png" alt="" class="country-flag">
-                                    <span class="country-name">Iran</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/italy.png" alt="" class="country-flag">
-                                    <span class="country-name">Italy</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/mexico.png" alt="" class="country-flag">
-                                    <span class="country-name">México</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/philipine.png" alt="" class="country-flag">
-                                    <span class="country-name">Philippines</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/portugal.png" alt="" class="country-flag">
-                                    <span class="country-name">Portugal</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/s-africa.png" alt="" class="country-flag">
-                                    <span class="country-name">South Africa</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/spanish.png" alt="" class="country-flag">
-                                    <span class="country-name">Spain</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/switzerland.png" alt="" class="country-flag">
-                                    <span class="country-name">Switzerland</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/uk.png" alt="" class="country-flag">
-                                    <span class="country-name">United Kingdom</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/english.png" alt="" class="country-flag">
-                                    <span class="country-name">United State</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div><!-- .modal-content -->
-        </div><!-- .modla-dialog -->
-    </div><!-- .modal -->
-    <!-- Add Room-->
-    <div class="modal fade" tabindex="-1" role="dialog" id="add-room">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
-                <div class="modal-body modal-body-md">
-                    <h5 class="modal-title">Add Room</h5>
-                    <form action="#" class="mt-2">
-                        <div class="row g-gs">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="room-no-add">Room No</label>
-                                    <input type="number" class="form-control" id="room-no-add" placeholder="Room No">
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Room Type</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2">
-                                            <option value="default_option">Room Type</option>
-                                            <option value="option_select_room_type">Delux</option>
-                                            <option value="option_select_room_type">Super Delux</option>
-                                            <option value="option_select_room_type">Single</option>
-                                            <option value="option_select_room_type">Double</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Air Conditon</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2">
-                                            <option value="default_option">AC</option>
-                                            <option value="option_select_ac">Non AC</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="bed-no-add">Bed Capacity</label>
-                                    <input type="number" class="form-control" id="bed-no-add" placeholder="Bed Capacity">
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Meal</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select multiple options">
-                                            <option value="default_option">None</option>
-                                            <option value="option_select_meal">Breakfast</option>
-                                            <option value="option_select_meal">Lunch</option>
-                                            <option value="option_select_meal">Dinner</option>
-                                            <option value="option_select_meal">Two</option>
-                                            <option value="option_select_meal">All</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="rent-add">Rent</label>
-                                    <input type="number" class="form-control" id="rent-add" placeholder="0.00 USD">
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Status</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select multiple options">
-                                            <option value="default_option">Open</option>
-                                            <option value="option_select_status">Inactive</option>
-                                            <option value="option_select_status">Booked</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-12">
-                                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                                    <li>
-                                        <button class="btn btn-primary" data-bs-dismiss="modal">Add Room</button>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="link" data-bs-dismiss="modal">Cancel</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div><!-- .modal-body -->
-            </div><!-- .modal-content -->
-        </div><!-- .modal-dialog -->
-    </div><!-- .modal -->
-    <!-- Add Room-->
+
+
     <div class="modal fade" tabindex="-1" role="dialog" id="edit-room">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
                 <div class="modal-body modal-body-md">
-                    <h5 class="modal-title">Edit Room</h5>
-                    <form action="#" class="mt-2">
-                        <div class="row g-gs">
-                            <div class="col-md-6">
+                    <h5 class="modal-title">Edit Destination</h5>
+                    <div class="card-inner">
+                        <div class="row gy-4">
+                            <div class="col-md-6 col-lg-4 col-xxl-3">
                                 <div class="form-group">
-                                    <label class="form-label" for="room-no-edit">Room No</label>
-                                    <input type="number" class="form-control" id="room-no-edit" value="107" placeholder="Room No">
+                                    <label class="form-label" for="first-name">Destination</label>
+                                    <input type="text" class="form-control" id="first-name"
+                                           placeholder="Destination Title" required>
                                 </div>
                             </div>
                             <!--col-->
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-lg-4 col-xxl-3">
                                 <div class="form-group">
-                                    <label class="form-label">Room Type</label>
+                                    <label class="form-label" for="last-name">Longtude</label>
+                                    <input type="text" class="form-control" id="last-name"
+                                           placeholder="Longtude">
+                                </div>
+                            </div>
+                            <!--col-->
+
+                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone-no">Latitude</label>
+                                    <input type="number" class="form-control" id="phone-no"
+                                           placeholder="Latitude">
+                                </div>
+                            </div>
+                            <!--col-->
+
+                            <!--col-->
+                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="form-group">
+                                    <label class="form-label">Departure Time</label>
                                     <div class="form-control-wrap">
-                                        <select class="form-select js-select2">
-                                            <option value="default_option">Room Type</option>
-                                            <option value="option_select_room_type">Delux</option>
-                                            <option value="option_select_room_type">Super Delux</option>
-                                            <option value="option_select_room_type">Single</option>
-                                            <option value="option_select_room_type">Double</option>
-                                        </select>
+                                        <div class="form-icon form-icon-right">
+                                            <em class="icon ni ni-calendar"></em>
+                                        </div>
+                                        <input type="text" class="form-control date-picker"
+                                               data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="form-group">
+                                    <label class="form-label">Return Time</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-icon form-icon-right">
+                                            <em class="icon ni ni-calendar"></em>
+                                        </div>
+                                        <input type="text" class="form-control date-picker"
+                                               data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                <div class="form-group">
+                                    <label class="form-label" for="total-person">Departure</label>
+                                    <input type="number" class="form-control" id="total-person"
+                                           placeholder="Departure Status">
+                                </div>
+                            </div>
+
+                            
+                            <!--col-->
+                            <div class="col-md-12 col-lg-8 col-xxl-6">
+                                <div class="form-group">
+                                    <label class="form-label">Upload Photo</label>
+                                    <div class="form-control-wrap">
+                                        <div class="form-file">
+                                            <input type="file" multiple class="form-file-input"
+                                                   id="customFile">
+                                            <label class="form-file-label" for="customFile">Choose
+                                                file</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!--col-->
-                            <div class="col-md-6">
+                            <!--col-->
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="form-label">Air Conditon</label>
+                                    <label class="form-label" for="default-textarea">Description</label>
                                     <div class="form-control-wrap">
-                                        <select class="form-select js-select2">
-                                            <option value="default_option">AC</option>
-                                            <option value="option_select_ac">Non AC</option>
-                                        </select>
+                                        <textarea class="form-control no-resize" id="default-textarea">Large text area content</textarea>
                                     </div>
                                 </div>
                             </div>
-                            <!--col-->
-                            <div class="col-md-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label class="form-label" for="bed-no-edit">Bed Capacity</label>
-                                    <input type="number" class="form-control" id="bed-no-edit" placeholder="Bed Capacity">
+                                    <button type="submit" class="btn btn-primary">Update Destination</button>
                                 </div>
                             </div>
                             <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Meal</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select multiple options">
-                                            <option value="default_option">None</option>
-                                            <option value="option_select_meal">Breakfast</option>
-                                            <option value="option_select_meal">Lunch</option>
-                                            <option value="option_select_meal">Dinner</option>
-                                            <option value="option_select_meal">Two</option>
-                                            <option value="option_select_meal">All</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="rent-edit">Rent</label>
-                                    <input type="number" class="form-control" id="rent-edit" value="38.99" placeholder="0.00 USD">
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Status</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select js-select2" data-placeholder="Select multiple options">
-                                            <option value="default_option">Open</option>
-                                            <option value="option_select_status">Inactive</option>
-                                            <option value="option_select_status">Booked</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--col-->
-                            <div class="col-12">
-                                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                                    <li>
-                                        <button class="btn btn-primary" data-bs-dismiss="modal">Update Room</button>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="link" data-bs-dismiss="modal">Cancel</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-                    </form>
+                        <!--row-->
+                    </div>
                 </div><!-- .modal-body -->
             </div><!-- .modal-content -->
         </div><!-- .modal-dialog -->
     </div><!-- .modal -->
     <!-- JavaScript -->
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 4620bb8f6086725886eaa6a3e064cf25375bae19
 </body>
 
 </html>
