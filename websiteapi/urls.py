@@ -16,6 +16,7 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('room_list', views.room_list, name='room_list'),
     path('room_type', views.room_type, name='room_type'),
+    path('destination_add', views.destination_add, name='destination_add'),
 
 
 

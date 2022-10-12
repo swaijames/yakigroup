@@ -15227,9 +15227,9 @@ input[type=radio]:checked ~ label {
   height: 2.125rem;
   padding: 0.4375rem 1rem;
   line-height: 1.25rem;
-  color: #3c4d62;
+  color: #dcfce7;
   content: "Browse";
-  background-color: #ebeef2;
+  background-color:  #15803d;
   border-left: inherit;
   border-radius: 0 4px 4px 0;
 }

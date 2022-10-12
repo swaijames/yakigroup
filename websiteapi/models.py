@@ -1,7 +1,17 @@
+from datetime import datetime
+from datetime import datetime, date
+
 from django.db import models
 from django.contrib.auth.models import User
 from uuid import uuid4
 import uuid
+
+STATUS_CHOICE = (
+    ('active', 'active'),
+    ('inactive', 'inactive'),
+    ('blocked', 'blocked'),
+
+)
 
 
 class Package(models.Model):
@@ -59,8 +69,17 @@ class Package_Details(models.Model):
 class Destination(models.Model):
     title = models.CharField(max_length=255, blank=False)
     image = models.FileField(blank=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    sub_image1 = models.FileField(blank=True)
+    sub_image2 = models.FileField(blank=True)
+    departureTime = models.DateField(default=date.today())
+    return_time = models.DateField(default=date.today())
+    map_latitude = models.CharField(max_length=255, blank=True)
+    map_longtude = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=False)
+    departure = models.CharField(max_length=255, blank=False)
+    status = models.CharField(choices=STATUS_CHOICE, blank=False, null=False, max_length=255, default='active')
+    created_at = models.DateTimeField(default=datetime.today())
+    updated_at = models.DateTimeField(default=datetime.today())
 
     class Meta:
         verbose_name = "Destination"
@@ -70,24 +89,24 @@ class Destination(models.Model):
         return self.title
 
 
-class Destination_Detail(models.Model):
-    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
-    details = models.TextField(blank=False)
-    title = models.CharField(max_length=255, blank=False)
-    image1 = models.FileField(blank=False)
-    image2 = models.FileField(blank=False)
-    departure = models.CharField(max_length=255, blank=False)
-    departure_time = models.DateTimeField(auto_now_add=True)
-    return_time = models.DateTimeField(auto_now=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = "Destination_Detail"
-        verbose_name_plural = "Destinations_Details"
-
-    def __str__(self):
-        return self.destination
+# class Destination_Detail(models.Model):
+#     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+#     details = models.TextField(blank=False)
+#     title = models.CharField(max_length=255, blank=False)
+#     image1 = models.FileField(blank=False)
+#     image2 = models.FileField(blank=False)
+#     departure = models.CharField(max_length=255, blank=False)
+#     departure_time = models.DateTimeField(auto_now_add=True)
+#     return_time = models.DateTimeField(auto_now=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now_add=True)
+#
+#     class Meta:
+#         verbose_name = "Destination_Detail"
+#         verbose_name_plural = "Destinations_Details"
+#
+#     def __str__(self):
+#         return self.destination
 
 
 class Gallery(models.Model):
@@ -133,3 +152,16 @@ class Profile(models.Model):
 
     def __str__(self):
         return '{}'.format(self.user)
+
+
+class Booking(models.Model):
+    fullname = models.CharField(max_length=255, blank=False)
+    email = models.EmailField(max_length=255, blank=False)
+    phone = models.IntegerField(blank=False, null=True)
+    ticket_type = models.CharField(max_length=255, blank=False)
+    adult = models.IntegerField(blank=False, null=True)
+    child = models.IntegerField(blank=False, null=True)
+    message = models.CharField(max_length=255, blank=False)
+
+    def __str__(self):
+        return self.fullname

@@ -1792,15 +1792,15 @@ progress {
 .table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: #dcfce7;
-  --bs-table-striped-color: #526484;
+  --bs-table-striped-color: #15803d;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --bs-table-active-color: #526484;
+  --bs-table-active-color: #15803d;
   --bs-table-active-bg: #f5f6fa;
-  --bs-table-hover-color: #526484;
+  --bs-table-hover-color: #15803d;
   --bs-table-hover-bg: #f5f6fa;
   width: 100%;
   margin-bottom: 1rem;
-  color: #526484;
+  color: #15803d;
   vertical-align: top;
   border-color: #15803d;
 }
@@ -2745,7 +2745,7 @@ div.dataTables_wrapper div.dataTables_filter .form-floating > input:not(:placeho
   font-family: Nunito, sans-serif;
   font-weight: 700;
   line-height: 1.25rem;
-  color: #526484;
+  color: #15803d;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -2763,7 +2763,7 @@ div.dataTables_wrapper div.dataTables_filter .form-floating > input:not(:placeho
   }
 }
 .btn:hover, .dual-listbox .dual-listbox__button:hover {
-  color: #526484;
+  color: #15803d;
 }
 .btn-check:focus + .btn, .dual-listbox .btn-check:focus + .dual-listbox__button, .btn:focus, .dual-listbox .dual-listbox__button:focus {
   outline: 0;

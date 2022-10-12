@@ -80,25 +80,25 @@ WSGI_APPLICATION = 'yakigroup.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 if os.environ.get('DEPLOYMENT_ENVIRONMENT') != "prod":
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': 'mydatabase',
-    #     }
-    # }
-
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'rojadb',
-            'USER': 'oceanwareltd',
-            'PASSWORD': 'QJBU2bD6gs7\+R',
-            'HOST': 'oceanwareltd.co.tz',
-            'PORT': '5432',
-
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'yakidatabase',
         }
-
     }
+    #
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.postgresql',
+    #         'NAME': 'rojadb',
+    #         'USER': 'oceanwareltd',
+    #         'PASSWORD': 'QJBU2bD6gs7\+R',
+    #         'HOST': 'oceanwareltd.co.tz',
+    #         'PORT': '5432',
+    #
+    #     }
+    #
+    # }
 #
 else:
     DATABASES = {
