@@ -189,6 +189,14 @@ def destination_add(request):
     return render(request, 'Tour/destination-add.html')
 
 
+def package_add(request):
+    return render(request, 'Tour/package-add.html')
+
+
+def package_list(request):
+    return render(request, 'Tour/package-list.html')
+
+
 def admin_login(request):
     try:
         if request.user.is_authenticated:

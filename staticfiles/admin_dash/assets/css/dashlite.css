@@ -4552,7 +4552,7 @@ div.dataTables_wrapper div.dataTables_filter .form-floating > input:not(:placeho
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 0.875rem;
-  color: #526484;
+  color: #15803d;
   text-align: left;
   background-color: #dcfce7;
   border: 0;
@@ -35611,12 +35611,12 @@ button.close {
   position: relative;
   display: inline-block;
   padding: 0 0.75rem;
-  color: #8094ae;
+  color: #15803d;
   font-size: 13px;
   line-height: 1.4;
 }
 .nk-reply-meta-info span, .nk-reply-meta-info strong, .nk-reply-meta-info .who {
-  color: #526484;
+  color: #15803d;
 }
 .nk-reply-meta-info .whom {
   color: #15803d;
