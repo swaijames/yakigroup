@@ -4,9 +4,12 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.template import loader
+from django.urls import reverse
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import *
+from django.views.generic.edit import DeleteView
 from django.conf import settings
 from django.core.mail import send_mail
 from rest_framework import generics, mixins
@@ -152,15 +155,51 @@ def customer(request):
 
 
 def room_list(request):
-    return render(request, 'Tour/room-list.html')
+    dest = Destination.objects.all().order_by('-updated_at')
+    context = {'dest': dest}
+    return render(request, 'Tour/room-list.html', context)
 
 
-def room_type(request):
-    return render(request, 'Tour/room-type.html')
+class DestinationDelete(DeleteView):
+    model = Destination
+    success_url = "/room_list"
+    template_name = 'Tour/room-delete.html'
 
 
-def room_list(request):
-    return render(request, 'Tour/room-list.html')
+def update(request, id):
+    mydest = Destination.objects.get(id=id)
+    template = loader.get_template('Tour/destination.update.html')
+    context = {
+        'mydest': mydest,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def update_destination(request, id):
+    title = request.POST['title']
+    longitude = request.POST['longtude']
+    latitude = request.POST['latitude']
+    depaturetime = request.POST['depaturetime']
+    return_time = request.POST['returntime']
+    departure = request.POST['departure']
+    image = request.POST['image']
+    subimage1 = request.POST['image1']
+    subimage2 = request.POST['image2']
+    description = request.POST['description']
+    dest = Destination.objects.get(id=id)
+    dest.title = title
+    dest.map_longtude = longitude
+    dest.map_latitude = latitude
+    dest.departureTime = depaturetime
+    dest.return_time = return_time
+    dest.departure = departure
+    dest.image = image
+    dest.sub_image1  = subimage1
+    dest.sub_image2 = subimage2
+    dest.description = description
+
+    dest.save()
+    return HttpResponseRedirect(reverse('room_list'))
 
 
 def room_type(request):
