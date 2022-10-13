@@ -24,10 +24,10 @@ class DestinationSerialiser(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class Destination_Detail_Serialiser(serializers.ModelSerializer):
-    class Meta:
-        model = Destination_Detail
-        fields = "__all__"
+# class Destination_Detail_Serialiser(serializers.ModelSerializer):
+#     class Meta:
+#         model = Destination_Detail
+#         fields = "__all__"
 
 
 class GallerySerializer(serializers.ModelSerializer):
@@ -39,6 +39,12 @@ class GallerySerializer(serializers.ModelSerializer):
 class HeroSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Hero
+        fields = "__all__"
+
+
+class BookingSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Booking
         fields = "__all__"
 
 
