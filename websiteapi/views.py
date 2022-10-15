@@ -205,6 +205,44 @@ def destination_add(request):
     return render(request, 'Tour/destination-add.html')
 
 
+def room_list(request):
+    return render(request, 'Tour/room-list.html')
+
+
+def room_type(request):
+    return render(request, 'Tour/room-type.html')
+
+
+def destination_add(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        longitude = request.POST['longtude']
+        latitude = request.POST['latitude']
+        depaturetime = request.POST['depaturetime']
+        return_time = request.POST['returntime']
+        departure = request.POST['departure']
+        image = request.POST['image']
+        subimage1 = request.POST['image1']
+        subimage2 = request.POST['image2']
+        description = request.POST['description']
+        destination = Destination.objects.create(title=title, map_latitude=latitude, map_longtude=longitude,
+                                                 departureTime=depaturetime, return_time=return_time,
+                                                 departure=departure, image=image, description=description,
+                                                 sub_image1=subimage1, sub_image2=subimage2)
+        messages.success(request, 'Data has been submitted')
+        print(destination)
+        # return redirect('/destination_add')
+    return render(request, 'Tour/destination-add.html')
+
+
+def package_add(request):
+    return render(request, 'Tour/package-add.html')
+
+
+def package_list(request):
+    return render(request, 'Tour/package-list.html')
+
+
 def admin_login(request):
     try:
         if request.user.is_authenticated:
