@@ -1,495 +1,405 @@
 {% extends 'Tour/base.html' %} {% load static %} {% block content %}
-<!-- content @s -->
-<div class="nk-content">
-  <div class="container-fluid">
-    <div class="nk-content-inner">
-      <div class="nk-content-body">
-        <div class="components-preview wide-md mx-auto">
-          <div class="nk-block nk-block-lg">
-            <div class="nk-block-head">
-              <div class="nk-block-head-content">
-                <h4 class="title nk-block-title">Package Details</h4>
-                <div class="nk-block-des">
-                  {% comment %}
-                  <p>A basic demostration of wizard form.</p>
-                  {% endcomment %}
+    <!-- content @s -->
+    <div class="nk-content">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="components-preview wide-md mx-auto">
+                        <div class="nk-block nk-block-lg">
+                            <div class="nk-block-head">
+                                <div class="nk-block-head-content">
+                                    <h4 class="title nk-block-title">Package Details</h4>
+                                    <div class="nk-block-des">
+                                        {% comment %}
+                                    <p>A basic demostration of wizard form.</p>
+                                    {% endcomment %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-bordered">
+                                <div class="card-inner">
+                                    <form action="{% url 'package_add' %}" class="nk-wizard nk-wizard-simple is-alter"
+                                          id="wizard-01" method="post">
+                                        {% csrf_token %}
+                                        <div class="nk-wizard-head">
+                                            <h5>Tour Reputation</h5>
+                                        </div>
+                                        <div class="nk-wizard-content">
+                                            <div class="row gy-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="fw-first-name">Duration</label>
+                                                        <div class="form-control-wrap">
+                                                            <input type="number" data-msg="Required"
+                                                                   class="form-control required" placeholder="4 Days"
+                                                                   id="fw-first-name" name="duration" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="fw-first-name">Title</label>
+                                                        <div class="form-control-wrap">
+                                                            <input type="text" data-msg="Required"
+                                                                   class="form-control required" placeholder="title"
+                                                                   id="fw-first-name" name="title" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="fw-last-name">Group Size</label>
+                                                        <div class="form-control-wrap">
+                                                            <input type="number" data-msg="Required"
+                                                                   placeholder="30 People"
+                                                                   class="form-control required" id="fw-last-name"
+                                                                   name="groupsize" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="fw-email-address">Tour
+                                                            Guide</label>
+                                                        <div class="form-control-wrap">
+                                                            <input type="number" data-msg="Required"
+                                                                   class="form-control required text"
+                                                                   placeholder="05 People"
+                                                                   id="fw-email-address" name="tour_guide" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="fw-email-address">price</label>
+                                                        <div class="form-control-wrap">
+                                                            <input type="number" data-msg="Required"
+                                                                   class="form-control required text"
+                                                                   placeholder="0000.00"
+                                                                   id="fw-email-address" name="price" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="fw-nationality">Tour Type</label>
+                                                        <div class="form-control-wrap">
+                                                            <div class="form-control-select">
+                                                                <select class="form-control required"
+                                                                        data-msg="Required"
+                                                                        id="fw-nationality" name="tour_type" required>
+                                                                    <option value="">Select Tour Type</option>
+                                                                    <option value="Daily-Tour">Daly Tour</option>
+                                                                    <option value="Weekly-Tour">Weekly Tour</option>
+                                                                    <option value="Monthly-Tour">Monthly Tour</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- .col -->
+                                            </div>
+                                        </div>
+                                        <div class="nk-wizard-head">
+                                            <h5>Package Details</h5>
+                                        </div>
+                                        <div class="nk-wizard-content">
+                                            <div class="row gy-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="form-label"
+                                                               for="default-textarea">Description</label>
+                                                        <div class="form-control-wrap">
+                                                        <textarea class="form-control no-resize" data-msg="Required"
+                                                                  id="default-textarea" name="pd-description" required>
+
+                                                      </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .row -->
+                                            <div class="row gy-3">
+                                                <div class="card-inner">
+                                                    <div class="row gy-4">
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                       for="first-name">Destination</label>
+                                                                <input type="text" class="form-control" id="first-name"
+                                                                       name="pd-destination"
+                                                                       placeholder="Destination Title"
+                                                                       required/>
+                                                            </div>
+                                                        </div>
+                                                        <!--col-->
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                       for="last-name">Included</label>
+                                                                <input type="text" class="form-control" id="last-name"
+                                                                       name="pd-include" placeholder="Included"/>
+                                                            </div>
+                                                        </div>
+                                                        <!--col-->
+
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                       for="phone-no">Excluded</label>
+                                                                <input type="text" class="form-control" id="phone-no"
+                                                                       name="pd-excluded" placeholder="Excluded"/>
+                                                            </div>
+                                                        </div>
+                                                        <!--col-->
+
+                                                        <!--col-->
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Departure Time</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-icon form-icon-right">
+                                                                        <em class="icon ni ni-calendar"></em>
+                                                                    </div>
+                                                                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd"
+                                                                           name="pd-departureTime"
+                                                                           placeholder="yyyy-mm-dd"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Return Time</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-icon form-icon-right">
+                                                                        <em class="icon ni ni-calendar"></em>
+                                                                    </div>
+                                                                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd"
+                                                                           name="pd-return-time"
+                                                                           placeholder="yyyy-mm-dd"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label"
+                                                                       for="total-person">Departure</label>
+                                                                <input type="text" class="form-control"
+                                                                       id="total-person"
+                                                                       name="pd-departure"
+                                                                       placeholder="Departure Status"/>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--col-->
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Upload Photo</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" name="pd-upload_photo"
+                                                                               multiple
+                                                                               class="form-file-input" id="customFile"/>
+                                                                        <label class="form-file-label"
+                                                                               for="customFile">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Destination Picture</label>
+                                                                <div class="form-control-wrap">
+                                                                    <div class="form-file">
+                                                                        <input type="file" multiple
+                                                                               class="form-file-input"
+                                                                               id="customFile"
+                                                                               name="pd-destination_picture"/>
+                                                                        <label class="form-file-label"
+                                                                               for="customFile">Choose file</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--col-->
+                                                        <!--col-->
+
+                                                        <!--col-->
+                                                    </div>
+                                                    <!--row-->
+                                                </div>
+                                                <!-- .card-inner-group -->
+                                            </div>
+                                            <!-- .row -->
+                                        </div>
+                                        <div class="nk-wizard-head">
+                                            <h5>Travel Plan</h5>
+                                        </div>
+                                        <div class="nk-wizard-content">
+                                            <div class="card-inner">
+                                                <div class="row gy-4">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="form-label"
+                                                                   for="default-textarea">Description</label>
+                                                            <div class="form-control-wrap">
+                                                            <textarea class="form-control no-resize"
+                                                                      id="default-textarea" name="tp-description">
+
+                                                                </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--col-->
+                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="last-name">Day Title</label>
+                                                            <input type="text" class="form-control" id="last-name"
+                                                                   name="tp-day_title"
+                                                                   placeholder="DAY 1 : Departure And Small Tour"/>
+                                                        </div>
+                                                    </div>
+                                                    <!--col-->
+
+                                                    <!--col-->
+                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="total-person">From </label>
+                                                            <input type="time" class="form-control " id="total-person"
+                                                                   name="tp-from" placeholder="10.00 AM "/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="total-person">To</label>
+                                                            <input type="time" class="form-control"  id="total-person"
+                                                                   name="tp-to" placeholder="10.00 AM to 10.00 PM"/>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                        <div class="form-group">
+                                                            <label class="form-label"
+                                                                   for="total-person">Description</label>
+                                                            <input type="text" class="form-control" id="total-person"
+                                                                   name="travel_plan_description"
+                                                                   placeholder="How the day will be...?"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="total-person">Day
+                                                                Features</label>
+                                                            <input type="text" class="form-control" id="total-person"
+                                                                   name="tp-day_feature"
+                                                                   placeholder="Private Transport"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--row-->
+                                            </div>
+                                        </div>
+                                        <div class="nk-wizard-head">
+                                            <h5>Tour Galery</h5>
+                                        </div>
+                                        <div class="nk-wizard-content">
+                                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Upload Photo</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-file">
+                                                            <input type="file" multiple name="gallery1"
+                                                                   class="form-file-input" id="customFile"/>
+                                                            <label class="form-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Upload Photo</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-file">
+                                                            <input type="file" multiple name="gallery2"
+                                                                   class="form-file-input" id="customFile"/>
+                                                            <label class="form-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Upload Photo</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-file">
+                                                            <input type="file" multiple class="form-file-input"
+                                                                   name="gallery3" id="customFile"/>
+                                                            <label class="form-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Upload Photo</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-file">
+                                                            <input type="file" multiple name="gallery4"
+                                                                   class="form-file-input" id="customFile"/>
+                                                            <label class="form-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                <div class="form-group">
+                                                    <label class="form-label">Upload Photo</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-file">
+                                                            <input type="file" multiple class="form-file-input"
+                                                                   id="customFile" name="gallery5"/>
+                                                            <label class="form-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-wizard-head">
+                                            <h5>Location</h5>
+                                        </div>
+                                        <div class="nk-wizard-content">
+                                            <div class="row gy-2">
+                                                <iframe
+                                                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15846.360988556271!2d39.2841528!3d-6.819587!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1665651092549!5m2!1sen!2stz"
+                                                        width="600" height="450" style="border: 0" allowfullscreen=""
+                                                        loading="lazy"
+                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                            <!-- .row -->
+                                        </div>
+                                        <button class="btn btn-primary type=submit">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .nk-block -->
+                    </div>
+                    <!-- .components-preview -->
                 </div>
-              </div>
             </div>
-            <div class="card card-bordered">
-              <div class="card-inner">
-                <form
-                  action="#"
-                  class="nk-wizard nk-wizard-simple is-alter"
-                  id="wizard-01"
-                >
-                  <div class="nk-wizard-head">
-                    <h5>Tour Reputation</h5>
-                  </div>
-                  <div class="nk-wizard-content">
-                    <div class="row gy-3">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="form-label" for="fw-first-name"
-                            >Duration</label
-                          >
-                          <div class="form-control-wrap">
-                            <input
-                              type="text"
-                              data-msg="Required"
-                              class="form-control required"
-                              placeholder="4 Days"
-                              id="fw-first-name"
-                              name="fw-first-name"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="form-label" for="fw-last-name"
-                            >Group Size</label
-                          >
-                          <div class="form-control-wrap">
-                            <input
-                              type="text"
-                              data-msg="Required"
-                              placeholder="30 People"
-                              class="form-control required"
-                              id="fw-last-name"
-                              name="fw-last-name"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="form-label" for="fw-email-address"
-                            >Tour Guide</label
-                          >
-                          <div class="form-control-wrap">
-                            <input
-                              type="text"
-                              data-msg="Required"
-                              class="form-control required text"
-                              placeholder="05 People"
-                              id="fw-email-address"
-                              name="fw-email-address"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="form-label" for="fw-nationality"
-                            >Tour Type</label
-                          >
-                          <div class="form-control-wrap">
-                            <div class="form-control-select">
-                              <select
-                                class="form-control required"
-                                data-msg="Required"
-                                id="fw-nationality"
-                                name="fw-nationality"
-                                required
-                              >
-                                <option value="">Select Tour Type</option>
-                                <option value="dy">Daly Tour</option>
-                                <option value="wk">Weekly Tour</option>
-                                <option value="my">Monthly Tour</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- .col -->
-                    </div>
-                  </div>
-                  <div class="nk-wizard-head">
-                    <h5>Package Details</h5>
-                  </div>
-                  <div class="nk-wizard-content">
-                    <div class="row gy-3">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="form-label" for="default-textarea"
-                            >Description</label
-                          >
-                          <div class="form-control-wrap">
-                            <textarea
-                              class="form-control no-resize"
-                              data-msg="Required"
-                              id="default-textarea"
-                              required
-                            >
-Large text area content</textarea
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- .row -->
-                    <div class="row gy-3">
-                      <div class="card-inner">
-                        <div class="row gy-4">
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label" for="first-name"
-                                >Destination</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="first-name"
-                                placeholder="Destination Title"
-                                required
-                              />
-                            </div>
-                          </div>
-                          <!--col-->
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label" for="last-name"
-                                >Included</label
-                              >
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="last-name"
-                                placeholder="Included"
-                              />
-                            </div>
-                          </div>
-                          <!--col-->
-
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label" for="phone-no"
-                                >Excluded</label
-                              >
-                              <input
-                                type="number"
-                                class="form-control"
-                                id="phone-no"
-                                placeholder="Excluded"
-                              />
-                            </div>
-                          </div>
-                          <!--col-->
-
-                          <!--col-->
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label">Departure Time</label>
-                              <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                  <em class="icon ni ni-calendar"></em>
-                                </div>
-                                <input
-                                  type="text"
-                                  class="form-control date-picker"
-                                  data-date-format="yyyy-mm-dd"
-                                  placeholder="yyyy-mm-dd"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label">Return Time</label>
-                              <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                  <em class="icon ni ni-calendar"></em>
-                                </div>
-                                <input
-                                  type="text"
-                                  class="form-control date-picker"
-                                  data-date-format="yyyy-mm-dd"
-                                  placeholder="yyyy-mm-dd"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label" for="total-person"
-                                >Departure</label
-                              >
-                              <input
-                                type="number"
-                                class="form-control"
-                                id="total-person"
-                                placeholder="Departure Status"
-                              />
-                            </div>
-                          </div>
-
-                          <!--col-->
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label">Upload Photo</label>
-                              <div class="form-control-wrap">
-                                <div class="form-file">
-                                  <input
-                                    type="file"
-                                    multiple
-                                    class="form-file-input"
-                                    id="customFile"
-                                  />
-                                  <label
-                                    class="form-file-label"
-                                    for="customFile"
-                                    >Choose file</label
-                                  >
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-md-6 col-lg-4 col-xxl-3">
-                            <div class="form-group">
-                              <label class="form-label"
-                                >Destination Picture</label
-                              >
-                              <div class="form-control-wrap">
-                                <div class="form-file">
-                                  <input
-                                    type="file"
-                                    multiple
-                                    class="form-file-input"
-                                    id="customFile"
-                                  />
-                                  <label
-                                    class="form-file-label"
-                                    for="customFile"
-                                    >Choose file</label
-                                  >
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!--col-->
-                          <!--col-->
-
-                          <!--col-->
-                        </div>
-                        <!--row-->
-                      </div>
-                      <!-- .card-inner-group -->
-                    </div>
-                    <!-- .row -->
-                  </div>
-                  <div class="nk-wizard-head">
-                    <h5>Travel Plan</h5>
-                  </div>
-                  <div class="nk-wizard-content">
-                    <div class="card-inner">
-                      <div class="row gy-4">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label class="form-label" for="default-textarea"
-                              >Description</label
-                            >
-                            <div class="form-control-wrap">
-                              <textarea
-                                class="form-control no-resize"
-                                id="default-textarea"
-                              >
-Large text area content</textarea
-                              >
-                            </div>
-                          </div>
-                        </div>
-                        <!--col-->
-                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                          <div class="form-group">
-                            <label class="form-label" for="last-name"
-                              >Day Title</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="last-name"
-                              placeholder="DAY 1 : Departure And Small Tour"
-                            />
-                          </div>
-                        </div>
-                        <!--col-->
-
-                        <!--col-->
-                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                          <div class="form-group">
-                            <label class="form-label" for="total-person"
-                              >From - To</label
-                            >
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="total-person"
-                              placeholder="10.00 AM to 10.00 PM"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                          <div class="form-group">
-                            <label class="form-label" for="total-person"
-                              >Description</label
-                            >
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="total-person"
-                              placeholder="How the day will be...?"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                          <div class="form-group">
-                            <label class="form-label" for="total-person"
-                              >Day Features</label
-                            >
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="total-person"
-                              placeholder="Private Transport"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <!--row-->
-                    </div>
-                  </div>
-                  <div class="nk-wizard-head">
-                    <h5>Tour Galery</h5>
-                  </div>
-                  <div class="nk-wizard-content">
-                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                      <div class="form-group">
-                        <label class="form-label">Upload Photo</label>
-                        <div class="form-control-wrap">
-                          <div class="form-file">
-                            <input
-                              type="file"
-                              multiple
-                              class="form-file-input"
-                              id="customFile"
-                            />
-                            <label class="form-file-label" for="customFile"
-                              >Choose file</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                      <div class="form-group">
-                        <label class="form-label">Upload Photo</label>
-                        <div class="form-control-wrap">
-                          <div class="form-file">
-                            <input
-                              type="file"
-                              multiple
-                              class="form-file-input"
-                              id="customFile"
-                            />
-                            <label class="form-file-label" for="customFile"
-                              >Choose file</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                      <div class="form-group">
-                        <label class="form-label">Upload Photo</label>
-                        <div class="form-control-wrap">
-                          <div class="form-file">
-                            <input
-                              type="file"
-                              multiple
-                              class="form-file-input"
-                              id="customFile"
-                            />
-                            <label class="form-file-label" for="customFile"
-                              >Choose file</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                      <div class="form-group">
-                        <label class="form-label">Upload Photo</label>
-                        <div class="form-control-wrap">
-                          <div class="form-file">
-                            <input
-                              type="file"
-                              multiple
-                              class="form-file-input"
-                              id="customFile"
-                            />
-                            <label class="form-file-label" for="customFile"
-                              >Choose file</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                      <div class="form-group">
-                        <label class="form-label">Upload Photo</label>
-                        <div class="form-control-wrap">
-                          <div class="form-file">
-                            <input
-                              type="file"
-                              multiple
-                              class="form-file-input"
-                              id="customFile"
-                            />
-                            <label class="form-file-label" for="customFile"
-                              >Choose file</label
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="nk-wizard-head">
-                    <h5>Location</h5>
-                  </div>
-                  <div class="nk-wizard-content">
-                    <div class="row gy-2">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15846.360988556271!2d39.2841528!3d-6.819587!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1665651092549!5m2!1sen!2stz"
-                        width="600"
-                        height="450"
-                        style="border: 0"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                      ></iframe>
-                    </div>
-                    <!-- .row -->
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <!-- .nk-block -->
         </div>
-        <!-- .components-preview -->
-      </div>
     </div>
-  </div>
-</div>
 
 <!-- content @e -->
 {% endblock content %}

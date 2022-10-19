@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, time
 from datetime import datetime, date
 
 from django.db import models
@@ -15,55 +15,94 @@ STATUS_CHOICE = (
 
 
 class Package(models.Model):
-    package_title = models.CharField(max_length=200, blank=False, null=False)
-    package_price = models.DecimalField(decimal_places=2, max_digits=6, blank=False)
-    package_duration = models.IntegerField(blank=False)
-    package_tour_type = models.CharField(max_length=200, blank=False)
-    package_tour_guide = models.IntegerField(blank=False)
-    package_people_group = models.IntegerField(blank=False)
+    package_title = models.CharField(max_length=200, blank=False, null=False, default="")
+    package_price = models.IntegerField(default=000000)
+    package_duration = models.IntegerField(blank=False, default=0)
+    package_tour_type = models.CharField(max_length=200, blank=False, default="")
+    package_tour_guide = models.IntegerField(blank=False, default=0)
+    package_people_group = models.IntegerField(blank=False, default=0)
+    description = models.TextField(blank=True, default="none")
+    info_detail = models.TextField(blank=True, default="none")
+    info_image1 = models.FileField(blank=False, default=None)
+    info_image2 = models.FileField(blank=False, default=None)
+    info_video = models.FileField(blank=True)
+    info_destination = models.CharField(max_length=200, blank=False, default="")
+    info_depature_time = models.DateField(default=date.today())
+    info_return_time = models.DateField(default=date.today())
+    info_depature = models.CharField(max_length=200, blank=False, default="")
+    info_included1 = models.CharField(max_length=200, default="none")
+    info_included2 = models.CharField(max_length=200, default="none")
+    info_included3 = models.CharField(max_length=200, default="")
+    info_included4 = models.CharField(max_length=200, default="")
+    info_included5 = models.CharField(max_length=200, default="")
+    info_excluded1 = models.CharField(max_length=200, default="")
+    info_excluded2 = models.CharField(max_length=200, default="")
+    info_excluded3 = models.CharField(max_length=200, default="")
+    info_excluded4 = models.CharField(max_length=200, default="")
+    info_excluded5 = models.CharField(max_length=200, default="")
+    travel_status = models.CharField(max_length=200, default="")
+    travel_plan_detail = models.TextField(blank=False, default="")
+    travel_plan_day_title = models.CharField(max_length=200, blank=False, default="")
+    travel_plan_day_time_From = models.CharField(default="10:00", max_length=200)
+    travel_plan_day_time_To = models.CharField(default="10:00", max_length=200)
+    travel_plan_day_description_To = models.TextField(blank=False, default="")
+    tour_gallery_image1 = models.FileField(default=None)
+    tour_gallery_image2 = models.FileField(default=None)
+    tour_gallery_image3 = models.FileField(default=None, blank=False)
+    tour_gallery_image4 = models.FileField(default=None, blank=False)
+    tour_gallery_image5 = models.FileField(default=None, blank=False)
+    map_latitude = models.CharField(max_length=255, blank=True)
+    map_longtude = models.CharField(max_length=255, blank=True)
+    created_at = models.DateTimeField(default=datetime.today())
+    updated_at = models.DateTimeField(default=datetime.today())
 
     def __str__(self):
         return self.package_title
 
 
-class Package_Details(models.Model):
-    package = models.ForeignKey(Package, on_delete=models.CASCADE, blank=False)
-    info_detail = models.TextField(blank=False)
-    info_image1 = models.FileField(blank=False)
-    info_image2 = models.FileField(blank=False)
-    info_video = models.FileField(blank=False)
-    info_destination = models.CharField(max_length=200, blank=False)
-    info_depature_time = models.DateTimeField(auto_now_add=True)
-    info_return_time = models.DateTimeField(auto_now_add=True)
-    info_depature = models.CharField(max_length=200, blank=False)
-    info_included1 = models.CharField(max_length=200)
-    info_included2 = models.CharField(max_length=200)
-    info_included3 = models.CharField(max_length=200)
-    info_included4 = models.CharField(max_length=200)
-    info_included5 = models.CharField(max_length=200)
-    info_excluded1 = models.CharField(max_length=200)
-    info_excluded2 = models.CharField(max_length=200)
-    info_excluded3 = models.CharField(max_length=200)
-    info_excluded4 = models.CharField(max_length=200)
-    info_excluded5 = models.CharField(max_length=200)
-    travel_status = models.CharField(max_length=200)
-    travel_plan_detail = models.TextField(blank=False)
-    travel_plan_day_title = models.CharField(max_length=200, blank=False)
-    travel_plan_day_time_From = models.DateTimeField(auto_now_add=True, blank=False)
-    travel_plan_day_time_To = models.DateTimeField(auto_now=True, blank=False)
-    travel_plan_day_description_To = models.TextField(blank=False)
-    gallery_image = models.FileField(blank=False)
-    map_latitude = models.CharField(max_length=255, blank=True)
-    map_longtude = models.CharField(max_length=255, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = "Package_Detail"
-        verbose_name_plural = "Packages_Details"
-
-    def __str__(self):
-        return self.package
+# class Package_Details(models.Model):
+#     package = models.ForeignKey(Package, on_delete=models.CASCADE, blank=True)
+#     description = models.TextField(blank=False, default="")
+#     info_detail = models.TextField(blank=False)
+#     info_image1 = models.FileField(blank=False)
+#     info_image2 = models.FileField(blank=False)
+#     info_video = models.FileField(blank=True)
+#     info_destination = models.CharField(max_length=200, blank=False)
+#     info_depature_time = models.DateField(default=date.today())
+#     info_return_time = models.DateField(default=date.today())
+#     info_depature = models.CharField(max_length=200, blank=False)
+#     info_included1 = models.CharField(max_length=200)
+#     info_included2 = models.CharField(max_length=200)
+#     info_included3 = models.CharField(max_length=200)
+#     info_included4 = models.CharField(max_length=200)
+#     info_included5 = models.CharField(max_length=200)
+#     info_excluded1 = models.CharField(max_length=200)
+#     info_excluded2 = models.CharField(max_length=200)
+#     info_excluded3 = models.CharField(max_length=200)
+#     info_excluded4 = models.CharField(max_length=200)
+#     info_excluded5 = models.CharField(max_length=200)
+#     travel_status = models.CharField(max_length=200)
+#     travel_plan_detail = models.TextField(blank=False)
+#     travel_plan_day_title = models.CharField(max_length=200, blank=False)
+#     travel_plan_day_time_From = models.CharField(default="10:00", max_length=200)
+#     travel_plan_day_time_To = models.CharField(default="10:00", max_length=200)
+#     travel_plan_day_description_To = models.TextField(blank=False)
+#     tour_gallery_image1 = models.FileField(default=None, blank=False)
+#     tour_gallery_image2 = models.FileField(default=None, blank=False)
+#     tour_gallery_image3 = models.FileField(default=None, blank=False)
+#     tour_gallery_image4 = models.FileField(default=None, blank=False)
+#     tour_gallery_image5 = models.FileField(default=None, blank=False)
+#     map_latitude = models.CharField(max_length=255, blank=True)
+#     map_longtude = models.CharField(max_length=255, blank=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now_add=True)
+#
+#     class Meta:
+#         verbose_name = "Package_Detail"
+#         verbose_name_plural = "Packages_Details"
+#
+#     def __str__(self):
+#         return self.package
 
 
 class Destination(models.Model):
@@ -81,12 +120,12 @@ class Destination(models.Model):
     created_at = models.DateTimeField(default=datetime.today())
     updated_at = models.DateTimeField(default=datetime.today())
 
-    class Meta:
-        verbose_name = "Destination"
-        verbose_name_plural = "Destinations"
-
-    def __str__(self):
-        return self.title
+    # class Meta:
+    #     verbose_name = "Destination"
+    #     verbose_name_plural = "Destinations"
+    #
+    # def __str__(self):
+    #     return self.title
 
 
 # class Destination_Detail(models.Model):

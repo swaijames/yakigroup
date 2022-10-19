@@ -12,11 +12,11 @@ class PackageSerialiser(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 
-class Package_Detail_Serialiser(serializers.ModelSerializer):
-    class Meta:
-        model = Package_Details
-        fields = "__all__"
-
+# class Package_Detail_Serialiser(serializers.ModelSerializer):
+#     class Meta:
+#         model = Package_Details
+#         fields = "__all__"
+#
 
 class DestinationSerialiser(serializers.ModelSerializer):
     class Meta:
