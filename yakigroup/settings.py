@@ -83,7 +83,7 @@ if os.environ.get('DEPLOYMENT_ENVIRONMENT') != "prod":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'yakidatabase',
+            'NAME': 'yaki_data',
         }
     }
     #

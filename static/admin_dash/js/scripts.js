@@ -413,7 +413,7 @@
                         $self_id.validate().settings.ignore = ":disabled";
                         return $self_id.valid();
                     },
-                    onFinished: function (event, currentIndex) { window.location.href = "#"; }
+                    onFinished: function (event, currentIndex) { window.location.href = "{% url 'package_add'%}"; }
 
                 }).validate({
                     errorElement: "span",

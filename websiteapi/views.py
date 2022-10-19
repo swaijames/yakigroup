@@ -59,18 +59,18 @@ class PackageView(
     serializer_class = PackageSerialiser
 
 
-class Package_Detail_View(
-    viewsets.GenericViewSet,
-    mixins.ListModelMixin,
-    mixins.CreateModelMixin,
-    mixins.UpdateModelMixin,
-    mixins.DestroyModelMixin,
-    mixins.RetrieveModelMixin
-
-):
-    queryset = Package_Details.objects.all()
-    serializer_class = Package_Detail_Serialiser
-
+# class Package_Detail_View(
+#     viewsets.GenericViewSet,
+#     mixins.ListModelMixin,
+#     mixins.CreateModelMixin,
+#     mixins.UpdateModelMixin,
+#     mixins.DestroyModelMixin,
+#     mixins.RetrieveModelMixin
+#
+# ):
+#     queryset = Package_Details.objects.all()
+#     serializer_class = Package_Detail_Serialiser
+#
 
 class DestnationView(
     viewsets.GenericViewSet,
@@ -194,7 +194,7 @@ def update_destination(request, id):
     dest.return_time = return_time
     dest.departure = departure
     dest.image = image
-    dest.sub_image1  = subimage1
+    dest.sub_image1 = subimage1
     dest.sub_image2 = subimage2
     dest.description = description
 
@@ -229,6 +229,60 @@ def destination_add(request):
 
 
 def package_add(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        duration = request.POST['duration']
+        group_size = request.POST['groupsize']
+        tour_guide = request.POST['tour_guide']
+        tour_type = request.POST['tour_type']
+        price = request.POST['price']
+
+        #     package details
+        pd_description = request.POST['pd-description']
+        pd_destination = request.POST['pd-destination']
+        pd_included = request.POST['pd-include']
+        pd_excluded = request.POST['pd-excluded']
+        pd_departure_time = request.POST['pd-departureTime']
+        pd_return_time = request.POST['pd-return-time']
+        pd_departure = request.POST['pd-departure']
+        pd_upload_photo = request.POST['pd-upload_photo']
+        pd_destination_picture = request.POST['pd-destination_picture']
+
+        #     travel plan
+        tp_description = request.POST['tp-description']
+        tp_day_title = request.POST['tp-day_title']
+        tp_from = request.POST['tp-from']
+        tp_to = request.POST['tp-to']
+        tp_day_feature = request.POST['tp-day_feature']
+
+        #     tour gallery_image
+        gallery1 = request.POST['gallery1']
+        gallery2 = request.POST['gallery2']
+        gallery3 = request.POST['gallery3']
+        gallery4 = request.POST['gallery4']
+        gallery5 = request.POST['gallery5']
+
+        package = Package.objects.create(package_duration=duration, package_price=price, package_tour_type=tour_type,
+                                         package_tour_guide=tour_guide, package_people_group=group_size,
+                                         package_title=title, info_detail=pd_description,
+                                         info_destination=pd_destination,
+                                         info_excluded1=pd_included, info_excluded2=pd_excluded,
+                                         info_depature_time=pd_departure_time,
+                                         info_return_time=pd_return_time, info_depature=pd_departure,
+                                         info_image1=pd_upload_photo,
+                                         info_image2=pd_destination_picture,
+                                         travel_plan_day_description_To=tp_description,
+                                         travel_plan_day_title=tp_day_title,
+                                         travel_plan_day_time_From=tp_from,
+                                         travel_plan_day_time_To=tp_to,
+                                         travel_plan_detail=tp_day_feature,
+                                         tour_gallery_image1=gallery1, tour_gallery_image2=gallery2,
+                                         tour_gallery_image3=gallery3, tour_gallery_image4=gallery4,
+                                         tour_gallery_image5=gallery5)
+
+        messages.success(request, 'Data has been submitted')
+        print(package)
+
     return render(request, 'Tour/package-add.html')
 
 
