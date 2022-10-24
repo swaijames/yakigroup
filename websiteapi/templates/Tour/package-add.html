@@ -1,401 +1,563 @@
 {% extends 'Tour/base.html' %} {% load static %} {% block content %}
     <!-- content @s -->
-    <div class="nk-content">
+    <div class="nk-content ">
         <div class="container-fluid">
             <div class="nk-content-inner">
                 <div class="nk-content-body">
                     <div class="components-preview wide-md mx-auto">
-                        <div class="nk-block nk-block-lg">
-                            <div class="nk-block-head">
-                                <div class="nk-block-head-content">
-                                    <h4 class="title nk-block-title">Package Details</h4>
-                                    <div class="nk-block-des">
-                                        {% comment %}
-                                    <p>A basic demostration of wizard form.</p>
-                                    {% endcomment %}
+                        <div class="nk-block-head nk-block-head-lg wide-sm">
+                            <div class="nk-block-head-content">
+
+                                
+                                <h2 class="nk-block-title fw-normal">Package Add</h2>
+                                
+                            </div>
+                        </div><!-- .nk-block-head -->
+                        <form class="nk-block nk-block-lg">
+                             
+                            <div class="card card-bordered card-preview">
+                                <div class="card-inner">
+                                    <div class="preview-block">
+                                        <span class="preview-title-lg overline-title">Tour Reputation</span>
+                                        <div class="row gy-4">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-01">Duration</label>
+                                                    <div class="form-control-wrap">
+                                                        <input type="text" class="form-control" id="default-01" placeholder="Input placeholder">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-05">Price</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-text-hint">
+                                                            <span class="overline-title">Tzs</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="default-05" placeholder="Input placeholder">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-03">Title</label>
+                                                    <div class="form-control-wrap">
+                                                      
+                                                        <input type="text" class="form-control" id="default-03" placeholder="Input placeholder">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-04">Group Size</label>
+                                                    <div class="form-control-wrap">
+                                                       
+                                                        <input type="text" class="form-control" id="default-04" placeholder="Input placeholder">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-04">Guider Size</label>
+                                                    <div class="form-control-wrap">
+                                                       
+                                                        <input type="text" class="form-control" id="default-04" placeholder="Input placeholder">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-textarea">Tour Details</label>
+                                                    <div class="form-control-wrap">
+                                                        <textarea class="form-control no-resize" id="default-textarea">Large text area content</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-06">Package Image</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-file">
+                                                            <input type="file" multiple class="form-file-input" id="customFile">
+                                                            <label class="form-file-label" for="customFile">Choose file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="default-07">Tour Type</label>
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-control-select">
+                                                            <select class="form-control" id="default-06">
+                                                                <option value="default_option">Daly Tour</option>
+                                                                <option value="option_select_name">Weekly Tour</option>
+                                                                <option value="option_select_name">Month Tour</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="preview-hr">
+                                        <span class="preview-title-lg overline-title">Package Details</span>
+                                        <div class="row gy-4">
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <input type="text" class="form-control form-control-outlined" id="outlined-normal">
+                                                        <label class="form-label-outlined" for="outlined-normal">Destination</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                            <option value="default_option">Default Option</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                        </select>
+                                                        <label class="form-label-outlined" for="outlined-normal">Includes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                            <option value="default_option">Default Option</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                            <option value="option_select_name">Option select name</option>
+                                                        </select>
+                                                        <label class="form-label-outlined" for="outlined-normal">Excludes</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-4">
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <div class="form-group">
+                                                        <div class="form-control-wrap">
+                                                            <input type="text" class="form-control form-control-outlined" id="outlined-normal">
+                                                            <label class="form-label-outlined" for="outlined-normal">Depture Status</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                          
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-icon form-icon-right xl">
+                                                            <em class="icon ni ni-calendar-alt"></em>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-outlined date-picker" id="outlined-date-picker">
+                                                        <label class="form-label-outlined" for="outlined-date-picker">Depature Date</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-icon form-icon-right xl">
+                                                            <em class="icon ni ni-calendar-alt"></em>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-outlined date-picker" id="outlined-date-picker">
+                                                        <label class="form-label-outlined" for="outlined-date-picker">Return Date</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% comment %} <div class="col-lg-4 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-control-wrap">
+                                                        <div class="form-icon form-icon-right xl">
+                                                            <em class="icon ni ni-clock"></em>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                                        <label class="form-label-outlined" for="outlined-time-picker">Time Picker</label>
+                                                    </div>
+                                                </div>
+                                            </div> {% endcomment %}
+                                        </div>
+                                        <hr class="preview-hr">
+                                        <span class="preview-title-lg overline-title">Package Gallery</span>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="default-06">Package Image</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" multiple class="form-file-input" id="customFile">
+                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="default-06">Package Image</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" multiple class="form-file-input" id="customFile">
+                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="default-06">Package Image</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" multiple class="form-file-input" id="customFile">
+                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="form-label" for="default-06">Package Image</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="form-file">
+                                                        <input type="file" multiple class="form-file-input" id="customFile">
+                                                        <label class="form-file-label" for="customFile">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <hr class="preview-hr">
+                                        <span class="preview-title-lg overline-title">Package Plan</span>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="last-name">Day / Week / Month Title</label>
+                                                <input type="text" class="form-control" id="last-name"
+                                                       name="tp-day_title"
+                                                       placeholder="DAY 1 : Departure And Small Tour"/>
+                                            </div>
+                                        </div>
+                                        <!--col-->
+
+                                        <!--col-->
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">From </label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">To</label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label"
+                                                       for="total-person">Description</label>
+                                                <input type="text" class="form-control" id="total-person"
+                                                       name="travel_plan_description"
+                                                       placeholder="How the day will be...?"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">Day
+                                                    Features</label>
+                                                    <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                        <option value="default_option">Default Option</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+
+                                               <br>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="last-name">Day / Week / Month Title</label>
+                                                <input type="text" class="form-control" id="last-name"
+                                                       name="tp-day_title"
+                                                       placeholder="DAY 2 : Departure And Small Tour"/>
+                                            </div>
+                                        </div>
+                                        <!--col-->
+
+                                        <!--col-->
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">From </label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">To</label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label"
+                                                       for="total-person">Description</label>
+                                                <input type="text" class="form-control" id="total-person"
+                                                       name="travel_plan_description"
+                                                       placeholder="How the day will be...?"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">Day
+                                                    Features</label>
+                                                    <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                        <option value="default_option">Default Option</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="last-name">Day / Week / Month Title</label>
+                                                <input type="text" class="form-control" id="last-name"
+                                                       name="tp-day_title"
+                                                       placeholder="DAY 3 : Departure And Small Tour"/>
+                                            </div>
+                                        </div>
+                                        <!--col-->
+
+                                        <!--col-->
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">From </label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">To</label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label"
+                                                       for="total-person">Description</label>
+                                                <input type="text" class="form-control" id="total-person"
+                                                       name="travel_plan_description"
+                                                       placeholder="How the day will be...?"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">Day
+                                                    Features</label>
+                                                    <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                        <option value="default_option">Default Option</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="last-name">Day / Week / Month Title</label>
+                                                <input type="text" class="form-control" id="last-name"
+                                                       name="tp-day_title"
+                                                       placeholder="DAY 4 : Departure And Small Tour"/>
+                                            </div>
+                                        </div>
+                                        <!--col-->
+
+                                        <!--col-->
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">From </label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">To</label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label"
+                                                       for="total-person">Description</label>
+                                                <input type="text" class="form-control" id="total-person"
+                                                       name="travel_plan_description"
+                                                       placeholder="How the day will be...?"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">Day
+                                                    Features</label>
+                                                    <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                        <option value="default_option">Default Option</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="last-name">Day / Week / Month Title</label>
+                                                <input type="text" class="form-control" id="last-name"
+                                                       name="tp-day_title"
+                                                       placeholder="DAY 5 : Departure And Small Tour"/>
+                                            </div>
+                                        </div>
+                                        <!--col-->
+
+                                        <!--col-->
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">From </label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">To</label>
+                                                <input type="text" class="form-control form-control-outlined time-picker" id="outlined-time-picker">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label"
+                                                       for="total-person">Description</label>
+                                                <input type="text" class="form-control" id="total-person"
+                                                       name="travel_plan_description"
+                                                       placeholder="How the day will be...?"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 col-xxl-3">
+                                            <div class="form-group">
+                                                <label class="form-label" for="total-person">Day
+                                                    Features</label>
+                                                    <select class="form-select js-select2" multiple="multiple" data-placeholder="Select Multiple options">
+                                                        <option value="default_option">Default Option</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                        <option value="option_select_name">Option select name</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--row-->
+                                </div>
+
+                                        <hr class="preview-hr">
+                                        <span class="preview-title-lg overline-title">Package Located</span>
+
+                                        <div class="row gy-2">
+                                            <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15846.360988556271!2d39.2841528!3d-6.819587!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1665651092549!5m2!1sen!2stz"
+                                                    width="600" height="250" style="border: 0" allowfullscreen=""
+                                                    loading="lazy"
+                                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+
+                                        <div class="col-sm-12 mt-2">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Add Package</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card card-bordered">
-                                <div class="card-inner">
-                                    <form action="{% url 'package_add' %}" class="nk-wizard nk-wizard-simple is-alter"
-                                          id="wizard-01" method="post">
-                                        {% csrf_token %}
-                                        <div class="nk-wizard-head">
-                                            <h5>Tour Reputation</h5>
-                                        </div>
-                                        <div class="nk-wizard-content">
-                                            <div class="row gy-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="fw-first-name">Duration</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="number" data-msg="Required"
-                                                                   class="form-control required" placeholder="4 Days"
-                                                                   id="fw-first-name" name="duration" required/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="fw-first-name">Title</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="text" data-msg="Required"
-                                                                   class="form-control required" placeholder="title"
-                                                                   id="fw-first-name" name="title" required/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="fw-last-name">Group Size</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="number" data-msg="Required"
-                                                                   placeholder="30 People"
-                                                                   class="form-control required" id="fw-last-name"
-                                                                   name="groupsize" required/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="fw-email-address">Tour
-                                                            Guide</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="number" data-msg="Required"
-                                                                   class="form-control required text"
-                                                                   placeholder="05 People"
-                                                                   id="fw-email-address" name="tour_guide" required/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="fw-email-address">price</label>
-                                                        <div class="form-control-wrap">
-                                                            <input type="number" data-msg="Required"
-                                                                   class="form-control required text"
-                                                                   placeholder="0000.00"
-                                                                   id="fw-email-address" name="price" required/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="form-label" for="fw-nationality">Tour Type</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="form-control-select">
-                                                                <select class="form-control required"
-                                                                        data-msg="Required"
-                                                                        id="fw-nationality" name="tour_type" required>
-                                                                    <option value="">Select Tour Type</option>
-                                                                    <option value="Daily-Tour">Daly Tour</option>
-                                                                    <option value="Weekly-Tour">Weekly Tour</option>
-                                                                    <option value="Monthly-Tour">Monthly Tour</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- .col -->
-                                            </div>
-                                        </div>
-                                        <div class="nk-wizard-head">
-                                            <h5>Package Details</h5>
-                                        </div>
-                                        <div class="nk-wizard-content">
-                                            <div class="row gy-3">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label class="form-label"
-                                                               for="default-textarea">Description</label>
-                                                        <div class="form-control-wrap">
-                                                        <textarea class="form-control no-resize" data-msg="Required"
-                                                                  id="default-textarea" name="pd-description" required>
-
-                                                      </textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- .row -->
-                                            <div class="row gy-3">
-                                                <div class="card-inner">
-                                                    <div class="row gy-4">
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label"
-                                                                       for="first-name">Destination</label>
-                                                                <input type="text" class="form-control" id="first-name"
-                                                                       name="pd-destination"
-                                                                       placeholder="Destination Title"
-                                                                       required/>
-                                                            </div>
-                                                        </div>
-                                                        <!--col-->
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label"
-                                                                       for="last-name">Included</label>
-                                                                <input type="text" class="form-control" id="last-name"
-                                                                       name="pd-include" placeholder="Included"/>
-                                                            </div>
-                                                        </div>
-                                                        <!--col-->
-
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label"
-                                                                       for="phone-no">Excluded</label>
-                                                                <input type="text" class="form-control" id="phone-no"
-                                                                       name="pd-excluded" placeholder="Excluded"/>
-                                                            </div>
-                                                        </div>
-                                                        <!--col-->
-
-                                                        <!--col-->
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Departure Time</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-icon form-icon-right">
-                                                                        <em class="icon ni ni-calendar"></em>
-                                                                    </div>
-                                                                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd"
-                                                                           name="pd-departureTime"
-                                                                           placeholder="yyyy-mm-dd"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Return Time</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-icon form-icon-right">
-                                                                        <em class="icon ni ni-calendar"></em>
-                                                                    </div>
-                                                                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd"
-                                                                           name="pd-return-time"
-                                                                           placeholder="yyyy-mm-dd"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label"
-                                                                       for="total-person">Departure</label>
-                                                                <input type="text" class="form-control"
-                                                                       id="total-person"
-                                                                       name="pd-departure"
-                                                                       placeholder="Departure Status"/>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--col-->
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Upload Photo</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-file">
-                                                                        <input type="file" name="pd-upload_photo"
-                                                                               multiple
-                                                                               class="form-file-input" id="customFile"/>
-                                                                        <label class="form-file-label"
-                                                                               for="customFile">Choose file</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                            <div class="form-group">
-                                                                <label class="form-label">Destination Picture</label>
-                                                                <div class="form-control-wrap">
-                                                                    <div class="form-file">
-                                                                        <input type="file" multiple
-                                                                               class="form-file-input"
-                                                                               id="customFile"
-                                                                               name="pd-destination_picture"/>
-                                                                        <label class="form-file-label"
-                                                                               for="customFile">Choose file</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <!--col-->
-                                                        <!--col-->
-
-                                                        <!--col-->
-                                                    </div>
-                                                    <!--row-->
-                                                </div>
-                                                <!-- .card-inner-group -->
-                                            </div>
-                                            <!-- .row -->
-                                        </div>
-                                        <div class="nk-wizard-head">
-                                            <h5>Travel Plan</h5>
-                                        </div>
-                                        <div class="nk-wizard-content">
-                                            <div class="card-inner">
-                                                <div class="row gy-4">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="form-label"
-                                                                   for="default-textarea">Description</label>
-                                                            <div class="form-control-wrap">
-                                                            <textarea class="form-control no-resize"
-                                                                      id="default-textarea" name="tp-description">
-
-                                                                </textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--col-->
-                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="last-name">Day Title</label>
-                                                            <input type="text" class="form-control" id="last-name"
-                                                                   name="tp-day_title"
-                                                                   placeholder="DAY 1 : Departure And Small Tour"/>
-                                                        </div>
-                                                    </div>
-                                                    <!--col-->
-
-                                                    <!--col-->
-                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="total-person">From </label>
-                                                            <input type="time" class="form-control " id="total-person"
-                                                                   name="tp-from" placeholder="10.00 AM "/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="total-person">To</label>
-                                                            <input type="time" class="form-control"  id="total-person"
-                                                                   name="tp-to" placeholder="10.00 AM to 10.00 PM"/>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label"
-                                                                   for="total-person">Description</label>
-                                                            <input type="text" class="form-control" id="total-person"
-                                                                   name="travel_plan_description"
-                                                                   placeholder="How the day will be...?"/>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" for="total-person">Day
-                                                                Features</label>
-                                                            <input type="text" class="form-control" id="total-person"
-                                                                   name="tp-day_feature"
-                                                                   placeholder="Private Transport"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--row-->
-                                            </div>
-                                        </div>
-                                        <div class="nk-wizard-head">
-                                            <h5>Tour Galery</h5>
-                                        </div>
-                                        <div class="nk-wizard-content">
-                                            <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Upload Photo</label>
-                                                    <div class="form-control-wrap">
-                                                        <div class="form-file">
-                                                            <input type="file" multiple name="gallery1"
-                                                                   class="form-file-input" id="customFile"/>
-                                                            <label class="form-file-label" for="customFile">Choose
-                                                                file</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Upload Photo</label>
-                                                    <div class="form-control-wrap">
-                                                        <div class="form-file">
-                                                            <input type="file" multiple name="gallery2"
-                                                                   class="form-file-input" id="customFile"/>
-                                                            <label class="form-file-label" for="customFile">Choose
-                                                                file</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Upload Photo</label>
-                                                    <div class="form-control-wrap">
-                                                        <div class="form-file">
-                                                            <input type="file" multiple class="form-file-input"
-                                                                   name="gallery3" id="customFile"/>
-                                                            <label class="form-file-label" for="customFile">Choose
-                                                                file</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Upload Photo</label>
-                                                    <div class="form-control-wrap">
-                                                        <div class="form-file">
-                                                            <input type="file" multiple name="gallery4"
-                                                                   class="form-file-input" id="customFile"/>
-                                                            <label class="form-file-label" for="customFile">Choose
-                                                                file</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4 col-xxl-3">
-                                                <div class="form-group">
-                                                    <label class="form-label">Upload Photo</label>
-                                                    <div class="form-control-wrap">
-                                                        <div class="form-file">
-                                                            <input type="file" multiple class="form-file-input"
-                                                                   id="customFile" name="gallery5"/>
-                                                            <label class="form-file-label" for="customFile">Choose
-                                                                file</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nk-wizard-head">
-                                            <h5>Location</h5>
-                                        </div>
-                                        <div class="nk-wizard-content">
-                                            <div class="row gy-2">
-                                                <iframe
-                                                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15846.360988556271!2d39.2841528!3d-6.819587!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1665651092549!5m2!1sen!2stz"
-                                                        width="600" height="450" style="border: 0" allowfullscreen=""
-                                                        loading="lazy"
-                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                            </div>
-                                            <!-- .row -->
-                                        </div>
-                                        <button class="btn btn-primary type=submit">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- .nk-block -->
-                    </div>
-                    <!-- .components-preview -->
+                                
+                            </div><!-- .card-preview -->
+                          
+                        </form><!-- .nk-block -->
+                    </div><!-- .components-preview -->
                 </div>
             </div>
         </div>
