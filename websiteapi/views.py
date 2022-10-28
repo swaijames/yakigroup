@@ -281,6 +281,7 @@ def package_add(request):
         group_size = request.POST['groupsize']
         tour_guide = request.POST['tour_guide']
         tour_type = request.POST['tour_type']
+        description = request.POST['description']
         price = request.POST['price']
 
         #     package details
@@ -292,7 +293,8 @@ def package_add(request):
         pd_return_time = request.POST['pd-return-time']
         pd_departure = request.POST['pd-departure']
         pd_upload_photo = request.POST['pd-upload_photo']
-        pd_destination_picture = request.POST['pd-destination_picture']
+        # pd_destination_picture = request.POST['pd-destination_picture']
+        package_status = request.POST['pd-package_status']
 
         #     travel plan
         tp_description = request.POST['tp-description']
@@ -300,31 +302,75 @@ def package_add(request):
         tp_from = request.POST['tp-from']
         tp_to = request.POST['tp-to']
         tp_day_feature = request.POST['tp-day_feature']
+        #
+        tp_description2 = request.POST['tp-description2']
+        tp_day_title2 = request.POST['tp-day_title2']
+        tp_from2 = request.POST['tp-from2']
+        tp_to2 = request.POST['tp-to2']
+        tp_day_feature2 = request.POST['tp-day_feature2']
+        #
+        tp_description3 = request.POST['tp-description3']
+        tp_day_title3 = request.POST['tp-day_title3']
+        tp_from3 = request.POST['tp-from3']
+        tp_to3 = request.POST['tp-to3']
+        tp_day_feature3 = request.POST['tp-day_feature3']
+        #
+        tp_description4 = request.POST['tp-description4']
+        tp_day_title4 = request.POST['tp-day_title4']
+        tp_from4 = request.POST['tp-from4']
+        tp_to4 = request.POST['tp-to4']
+        tp_day_feature4 = request.POST['tp-day_feature4']
+        #
+        tp_description5 = request.POST['tp-description5']
+        tp_day_title5 = request.POST['tp-day_title5']
+        tp_from5 = request.POST['tp-from5']
+        tp_to5 = request.POST['tp-to5']
+        tp_day_feature5 = request.POST['tp-day_feature5']
 
         #     tour gallery_image
         gallery1 = request.POST['gallery1']
         gallery2 = request.POST['gallery2']
         gallery3 = request.POST['gallery3']
         gallery4 = request.POST['gallery4']
-        gallery5 = request.POST['gallery5']
+        # gallery5 = request.POST['gallery5']
 
         package = Package.objects.create(package_duration=duration, package_price=price, package_tour_type=tour_type,
                                          package_tour_guide=tour_guide, package_people_group=group_size,
-                                         package_title=title, info_detail=pd_description,
+                                         package_title=title, info_detail=pd_description, description=description,
                                          info_destination=pd_destination,
                                          info_excluded1=pd_included, info_excluded2=pd_excluded,
                                          info_depature_time=pd_departure_time,
                                          info_return_time=pd_return_time, info_depature=pd_departure,
                                          info_image1=pd_upload_photo,
-                                         info_image2=pd_destination_picture,
+                                         # info_image2=pd_destination_picture,
                                          travel_plan_day_description_To=tp_description,
                                          travel_plan_day_title=tp_day_title,
                                          travel_plan_day_time_From=tp_from,
                                          travel_plan_day_time_To=tp_to,
                                          travel_plan_detail=tp_day_feature,
+                                         travel_plan2_day_description_To=tp_description2,
+                                         travel_plan2_day_title=tp_day_title2,
+                                         travel_plan2_day_time_From=tp_from2,
+                                         travel_plan2_day_time_To=tp_to2,
+                                         travel_plan2_detail=tp_day_feature2,
+                                         travel_plan3_day_description_To=tp_description3,
+                                         travel_plan3_day_title=tp_day_title3,
+                                         travel_plan3_day_time_From=tp_from3,
+                                         travel_plan3_day_time_To=tp_to3,
+                                         travel_plan3_detail=tp_day_feature3,
+                                         travel_plan4_day_description_To=tp_description4,
+                                         travel_plan4_day_title=tp_day_title4,
+                                         travel_plan4_day_time_From=tp_from4,
+                                         travel_plan4_day_time_To=tp_to4,
+                                         travel_plan4_detail=tp_day_feature4,
+                                         travel_plan5_day_description_To=tp_description5,
+                                         travel_plan5_day_title=tp_day_title5,
+                                         travel_plan5_day_time_From=tp_from5,
+                                         travel_plan5_day_time_To=tp_to5,
+                                         travel_plan5_detail=tp_day_feature,
                                          tour_gallery_image1=gallery1, tour_gallery_image2=gallery2,
                                          tour_gallery_image3=gallery3, tour_gallery_image4=gallery4,
-                                         tour_gallery_image5=gallery5)
+                                         )
 
         messages.success(request, 'Data has been submitted')
         print(package)
