@@ -130,15 +130,20 @@
                                         <span class="preview-title-lg overline-title">Package Details</span>
                                         <div class="row gy-4">
                                             <div class="col-lg-4 col-sm-6">
-                                                <div class="form-group">
-                                                    <div class="form-control-wrap">
-                                                        <input type="text" class="form-control form-control-outlined"
-                                                               name="pd-destination"
-                                                               id="outlined-normal">
-                                                        <label class="form-label-outlined" for="outlined-normal">Destination</label>
+                                                    <div class="form-group">
+                                                        <div class="form-control-wrap">
+                                                            <select class="form-select js-select2"
+                                                                    name="package"
+                                                                    data-placeholder="Select Multiple options">
+                                                                {% for dest in destn %}
+                                                                    <option value="{{ dest.id }}">{{ dest.title }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                            <label class="form-label-outlined"
+                                                                   for="outlined-normal">Destination</label>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
                                             <div class="col-lg-4 col-sm-6">
                                                 <div class="form-group">
@@ -222,33 +227,52 @@
                                                 </div>
 
 
-                                                   <div class="col-md-6 col-lg-4 col-xxl-3">
-                                            <div class="form-group">
-                                                <label class="form-label">Departure Time</label>
-                                                <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-calendar"></em>
+                                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Departure Time</label>
+                                                        <div class="form-control-wrap">
+                                                            <div class="form-icon form-icon-right">
+                                                                <em class="icon ni ni-calendar"></em>
+                                                            </div>
+                                                            <input type="text" class="form-control date-picker"
+                                                                   name="pd-departureTime"
+                                                                   data-date-format="yyyy-mm-dd"
+                                                                   placeholder="yyyy-mm-dd">
+                                                        </div>
                                                     </div>
-                                                    <input type="text" class="form-control date-picker"
-                                                           name="pd-departureTime"
-                                                           data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
                                                 </div>
-                                            </div>
-                                        </div>
 
-                                               <div class="col-md-6 col-lg-4 col-xxl-3">
-                                            <div class="form-group">
-                                                <label class="form-label">Return Time</label>
-                                                <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-calendar"></em>
+                                                <div class="col-md-6 col-lg-4 col-xxl-3">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Return Time</label>
+                                                        <div class="form-control-wrap">
+                                                            <div class="form-icon form-icon-right">
+                                                                <em class="icon ni ni-calendar"></em>
+                                                            </div>
+                                                            <input type="text" class="form-control date-picker"
+                                                                   name="pd-return-time"
+                                                                   data-date-format="yyyy-mm-dd"
+                                                                   placeholder="yyyy-mm-dd">
+                                                        </div>
                                                     </div>
-                                                    <input type="text" class="form-control date-picker"
-                                                           name="pd-return-time"
-                                                           data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
                                                 </div>
-                                            </div>
-                                        </div>
+
+                                                <div class="col-lg-4 col-sm-6">
+                                                    <div class="form-group">
+                                                        <div class="form-control-wrap">
+                                                            <select class="form-select js-select2"
+                                                                    name="package"
+                                                                    data-placeholder="Select Multiple options">
+                                                                {% for pack in pack %}
+                                                                    <option value="{{ pack.id }}">{{ pack.package_title }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                            <label class="form-label-outlined"
+                                                                   for="outlined-normal">package</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <div class="row gy-4">
                                                     <div class="form-group">
                                                         <label class="form-label" for="default-textarea">Package

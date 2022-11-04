@@ -9,7 +9,7 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Package)
-# admin.site.register(Package_Details)
+admin.site.register(Package_Data)
 admin.site.register(Destination)
 # admin.site.register(Destination_Detail)
 admin.site.register(Gallery)
